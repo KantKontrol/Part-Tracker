@@ -20,12 +20,12 @@ export default function ChoosePart(){
                 </div>
                 
                 <div className="row">
-                    <PartSelectDisplay />
-                    <PartSelectDisplay />
-                    <PartSelectDisplay />
-                    <PartSelectDisplay />
-                    <PartSelectDisplay />
-                    <PartSelectDisplay />
+                    <PartSelectDisplay id={1}/>
+                    <PartSelectDisplay id={2}/>
+                    <PartSelectDisplay id={3}/>
+                    <PartSelectDisplay id={4}/>
+                    <PartSelectDisplay id={5}/>
+                    <PartSelectDisplay id={6}/>
                 </div>
             </div>
         </div>

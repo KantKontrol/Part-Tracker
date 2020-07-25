@@ -1,16 +1,18 @@
 import React from "react";
 
 
-export default function PartModal(){
+export default function PartModal(props){
+
+    let { id, title, image } = props;
 
     return (
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p>A bunch of text</p>
+        <div id={id} className="modal">
+            <div className="modal-content">
+                <h4>{title}</h4>
+                <p>Enter the quantity</p>
             </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <div className="modal-footer">
+                <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
             </div>
         </div>
     );

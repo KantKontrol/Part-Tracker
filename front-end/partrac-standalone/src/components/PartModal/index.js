@@ -11,15 +11,15 @@ export default function PartModal(props){
                 <img className="modal-image" src="https://via.placeholder.com/150" alt="..."></img>
                 <h4>{title + " - " + model}</h4>
                 <p>Enter the quantity...</p>
-                <div class="col s4">
-                    <div class="input-field inline">
-                        <input id="email_inline" type="email" class="validate" />
-                        <label for="email_inline">Quantity</label>
+                <div className="col s4">
+                    <div className="input-field inline">
+                        <input placeholder="0" id="quantity_inline" type="number" className="validate" />
                     </div>
                     pc/pcs.
                 </div>
             </div>
             <div className="modal-footer">
+                <a href="#!" className="modal-close waves-effect waves-green btn-flat">Cancel</a>
                 <a href="#!" className="modal-close waves-effect waves-green btn-flat">Submit</a>
             </div>
         </div>

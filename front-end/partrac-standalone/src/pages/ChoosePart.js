@@ -21,11 +21,11 @@ export default function ChoosePart(){
                 
                 <div className="row">
                     <PartSelectDisplay id={1} title="Screen" model="Dell 3120"/>
-                    <PartSelectDisplay id={2} title="Keyboard"/>
-                    <PartSelectDisplay id={3} title="Battery"/>
-                    <PartSelectDisplay id={4} title="Touchpad Cable"/>
-                    <PartSelectDisplay id={5} title="Charging Port"/>
-                    <PartSelectDisplay id={6} title="Screen"/>
+                    <PartSelectDisplay id={2} title="Keyboard" model="Dell 3120"/>
+                    <PartSelectDisplay id={3} title="Battery" model="Dell 3120"/>
+                    <PartSelectDisplay id={4} title="Touchpad Cable" model="Dell 3120"/>
+                    <PartSelectDisplay id={5} title="Charging Port" model="Dell 3120"/>
+                    <PartSelectDisplay id={6} title="Screen" model="Dell 3120"/>
                 </div>
             </div>
         </div>

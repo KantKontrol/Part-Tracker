@@ -16,7 +16,7 @@ export default function PartSelectDisplay(props){
                     </div>
                 </div>
             </a>
-            <PartModal id={id}/>
+            <PartModal id={id} title={title}/>
         </div>
     );
 }

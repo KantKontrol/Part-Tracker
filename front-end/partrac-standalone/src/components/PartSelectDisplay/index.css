@@ -8,10 +8,11 @@
     float: left;
     margin-left: 10px;
     margin-top: 40px;
+    font-size: 1.8rem;
 }
 
 .part-center {
-    width: 300px;
+    width: 355px;
     height: 150px;
     margin: 0 auto;
 }

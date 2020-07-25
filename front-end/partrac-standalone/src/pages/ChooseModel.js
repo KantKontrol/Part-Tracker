@@ -1,5 +1,5 @@
 import React from "react";
-
+import ModelSelectDisplay from "../components/ModelSelectDisplay";
 
 export default function ChooseModel(){
 
@@ -11,7 +11,12 @@ export default function ChooseModel(){
 
             <div className="container" style={{ flex: "1 0 auto"}}>
                 <div className="row">
-  
+                    <ModelSelectDisplay />
+                    <ModelSelectDisplay />
+                    <ModelSelectDisplay />
+                    <ModelSelectDisplay />
+                    <ModelSelectDisplay />
+                    <ModelSelectDisplay />
                 </div>
             </div>
         </div>

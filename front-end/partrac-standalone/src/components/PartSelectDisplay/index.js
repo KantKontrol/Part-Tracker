@@ -4,7 +4,7 @@ import PartModal from "../PartModal";
 
 export default function PartSelectDisplay(props){
 
-    let { id, title } = props;
+    let { id, title, model } = props;
 
     return (
         <div>
@@ -16,7 +16,7 @@ export default function PartSelectDisplay(props){
                     </div>
                 </div>
             </a>
-            <PartModal id={id} title={title}/>
+            <PartModal id={id} title={title} model={model}/>
         </div>
     );
 }

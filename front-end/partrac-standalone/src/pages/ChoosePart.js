@@ -1,5 +1,7 @@
 import React from "react";
 import VersionStamp from "../components/VersionStamp";
+import PartSelectDisplay from "../components/PartSelectDisplay";
+
 
 export default function ChoosePart(){
 
@@ -8,8 +10,10 @@ export default function ChoosePart(){
         <div>
             <VersionStamp />
 
+            <div className="container">
+                <PartSelectDisplay />
 
-            
+            </div>
         </div>
     );
 }

@@ -9,10 +9,24 @@ export default function ChoosePart(){
     return (
         <div>
             <VersionStamp />
+            <h4 style={{ width: "max-content", margin: "20px auto"}}>Choose a part to add to package...</h4>
 
             <div className="container">
-                <PartSelectDisplay />
-
+                <div className="row">
+                    <div className="col s4">
+                        <a href="/models" className="btn">{"<- Models"}</a>
+                    </div>
+                    <div className="col s8"></div>
+                </div>
+                
+                <div className="row">
+                    <PartSelectDisplay />
+                    <PartSelectDisplay />
+                    <PartSelectDisplay />
+                    <PartSelectDisplay />
+                    <PartSelectDisplay />
+                    <PartSelectDisplay />
+                </div>
             </div>
         </div>
     );

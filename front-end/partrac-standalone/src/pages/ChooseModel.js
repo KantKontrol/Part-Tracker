@@ -7,7 +7,7 @@ export default function ChooseModel(){
 
     return (
         <div>
-            <h1>Choose Model</h1>
+            <h1 style={{ width: "max-content", margin: "20px auto"}}>Choose Model</h1>
 
             <div className="container" style={{ flex: "1 0 auto"}}>
                 <div className="row">

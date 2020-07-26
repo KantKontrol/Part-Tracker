@@ -1,0 +1,5 @@
+	Partrac Standalone(Front end user app)
+
+		-Add electron use for partrac standalone
+		-Add routing for partrac standalone
+		-Create stateful component to handle item package state

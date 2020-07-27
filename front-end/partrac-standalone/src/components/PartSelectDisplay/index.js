@@ -8,7 +8,7 @@ export default function PartSelectDisplay(props){
 
     return (
         <div>
-            <a className="modal-trigger" href={`#${id}`}>
+            <a className="modal-trigger " href={`#${id}`}>
                 <div className="col s6" style={{marginTop: "10px"}}>
                     <div className="part-center">
                         <div className="part-image" style={{ backgroundImage: "url(https://via.placeholder.com/150)"}}></div>

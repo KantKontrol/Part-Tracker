@@ -9,7 +9,7 @@ export default function CheckSubmit(){
         <div>
             <VersionStamp />
 
-            <h1>Verify your items...</h1>
+            <h1 style={{ width: "max-content", margin: "20px auto"}}>Verify your items...</h1>
             <div className="container">
 
                 <div className="row">
@@ -21,10 +21,10 @@ export default function CheckSubmit(){
 
 
                 <div className="row">
+                <div className="col s10"></div>
                     <div className="col s2">
-                        <button >Submit items</button>
+                        <button className="btn">Submit items</button>
                     </div>
-                    <div className="col s10"></div>
                 </div>
             </div>
         </div>

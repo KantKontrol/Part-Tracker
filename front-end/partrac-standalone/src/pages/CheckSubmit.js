@@ -21,7 +21,10 @@ export default function CheckSubmit(){
 
 
                 <div className="row">
-                <div className="col s10"></div>
+                    <div className="col s9"></div>
+                    <div className="col s1">
+                        <input placeholder="Initials" type="text" className="validate" />
+                    </div>
                     <div className="col s2">
                         <button className="btn">Submit items</button>
                     </div>

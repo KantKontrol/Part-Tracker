@@ -7,7 +7,7 @@ let mainWindow;
 function createWindow() {
     mainWindow = new BrowserWindow({
         minWidth: 1280,
-        minHeight: 720,
+        minHeight: 810,
         show: false
     });
     const startURL = isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`;

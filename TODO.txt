@@ -1,7 +1,7 @@
 	Partrac Standalone(Front end user app)
 
-		-Add electron use for partrac standalone
-		-Add routing for partrac standalone
+		-Add electron use for partrac standalone - DONE
+		-Add routing for partrac standalone - DONE
 		-Create stateful component to handle item package state
 
 	Partrac Admin & REST API Server

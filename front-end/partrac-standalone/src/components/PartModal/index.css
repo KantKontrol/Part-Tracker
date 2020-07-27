@@ -2,3 +2,7 @@
     float: left;
     margin-right: 10px;
 }
+
+.modal {
+    width: 65% !important;
+}

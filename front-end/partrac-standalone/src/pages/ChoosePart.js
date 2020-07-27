@@ -1,6 +1,7 @@
 import React from "react";
 import VersionStamp from "../components/VersionStamp";
 import PartSelectDisplay from "../components/PartSelectDisplay";
+import { Link } from "react-router-dom";
 
 
 export default function ChoosePart(){
@@ -14,7 +15,7 @@ export default function ChoosePart(){
             <div className="container">
                 <div className="row">
                     <div className="col s4">
-                        <a href="/models" className="btn">{"<- Models"}</a>
+                        <Link to="/" className="btn">{"<- Models"}</Link>
                     </div>
                     <div className="col s8"></div>
                 </div>

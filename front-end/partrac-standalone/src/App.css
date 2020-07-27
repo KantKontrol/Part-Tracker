@@ -21,6 +21,12 @@
   border: 2px solid #26a69a;
 }
 
+.check-sub-button {
+  font-size: 1.4rem !important;
+  display: block !important;
+  margin: 0 auto;
+  width: 300px;
+}
 
 
 

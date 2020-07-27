@@ -15,11 +15,9 @@ export default function ChooseModel(){
 
             <div className="container">
                 <div className="row">
-                    <div className="col s4"></div>
-                    <div className="col s4">
-                        <Link to="/checksubmit" className="btn" style={{ display: "block", fontSize: 1.4 + "rem" }}>Check Items and Submit</Link>
+                    <div className="col s12">
+                        <Link to="/checksubmit" className="btn check-sub-button">Check Items and Submit</Link>
                     </div>
-                    <div className="col s4"></div>
                 </div>
                 <div className="row">
                     <ModelSelectDisplay />

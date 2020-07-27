@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import ChooseModel from "./pages/ChooseModel";
@@ -8,10 +9,12 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
-      <CheckSubmit />
+    <Router>
+      <Route exact path="/" component={ChooseModel} />
+      <Route path="/checksubmit" component={CheckSubmit} />
+      <Route path="/choosepart" component={ChoosePart} />
       <Footer />
-    </div>
+    </Router>
   );
 }
 

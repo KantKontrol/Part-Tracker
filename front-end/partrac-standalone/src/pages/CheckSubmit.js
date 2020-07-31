@@ -24,11 +24,13 @@ export default function CheckSubmit(props){
                 </div>
 
                 <div className="row">
+                    <div className="col s1"></div>
                     <div className="col s10" style={{ margin: "0 auto" }}>
                         {
-                            partPackage.length > 0 ? partPackage.map(e => <h4>{e.title}</h4>) : <h2>Package Empty</h2>
+                            partPackage.length > 0 ? partPackage.map(e => <h4 key={e.id}>{`${e.model}, ${e.title} - Quantity: ${e.quantity}`}</h4>) : <h2>Package Empty</h2> //create meaningful sort later through partPackage state
                         }
                     </div>
+                    <div className="col s1"></div>
                 </div>
 
 

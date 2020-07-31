@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./index.css";
 import PartModal from "../PartModal";
+import GContext from "../../utils/GContext";
 
 export default function PartSelectDisplay(props){
 
     let { id, title, model } = props;
+    let { addPart } = useContext(GContext);
 
     return (
         <div>
@@ -16,7 +18,7 @@ export default function PartSelectDisplay(props){
                     </div>
                 </div>
             </a>
-            <PartModal id={id} title={title} model={model}/>
+            <PartModal id={id} title={title} model={model} addPart={addPart}/>
         </div>
     );
 }

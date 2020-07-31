@@ -4,17 +4,22 @@ import "materialize-css/dist/css/materialize.min.css";
 import "./index.css";
 
 
+
 class PartModal extends Component {
 
     constructor(props){
         super(props);
 
+        console.log(props)
+
         this.state = {
-          part: {props},
+          props,
           quantity: 0
         }
+
     }
 
+  
     setQuantity = (event) => {
       let value = event.target.value;
       if(value >= 0)
@@ -73,7 +78,7 @@ class PartModal extends Component {
             </div>
             <div className="modal-footer">
                 <a href="#!" className="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                <a href="#!" className="modal-close waves-effect waves-green btn-flat">Submit</a>
+                <a href="#!" onClick={() => this.props.addPart(this.state)} className="modal-close waves-effect waves-green btn-flat">Submit</a>
             </div>
           </div>
         </>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
@@ -17,8 +17,29 @@ function App() {
     setInitials: function(event){
       let input = event.target.value;
       setAppState({ ...appState, initials: input })
+    },
+    addPart: function(partData){
+
+      let { props, quantity } = partData;
+
+      let newPart = {
+        id: props.id,
+        title: props.title,
+        model: props.model,
+        quantity: quantity
+      }
+
+      let oldPackage = appState.package;
+
+      oldPackage.push(newPart);
+
+      setAppState({ ...appState, package: oldPackage });
     }
   });
+
+  useEffect(() => { //this function is for debugging purposes
+    console.log(appState)
+  }, [appState]);
 
   return (
     <GContext.Provider value={appState}>

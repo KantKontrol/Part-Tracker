@@ -5,7 +5,9 @@ import GContext from "../utils/GContext";
 
 export default function CheckSubmit(props){
 
-    const {initials, setInitials, partPackage } = useContext(GContext);
+    const {initials, setInitials, partPackage} = useContext(GContext);
+
+    console.log(partPackage);
 
     return (
         <div>
@@ -22,7 +24,11 @@ export default function CheckSubmit(props){
                 </div>
 
                 <div className="row">
-
+                    <div className="col s10" style={{ margin: "0 auto" }}>
+                        {
+                            partPackage.length > 0 ? partPackage.map(e => <h4>{e.title}</h4>) : <h2>Package Empty</h2>
+                        }
+                    </div>
                 </div>
 
 

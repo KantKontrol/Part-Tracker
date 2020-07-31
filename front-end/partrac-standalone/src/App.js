@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
@@ -8,6 +8,13 @@ import CheckSubmit from "./pages/CheckSubmit";
 import Footer from "./components/Footer";
 
 function App() {
+
+
+  const [appState, setAppState] = useState({
+    package: [],
+    initials: ""
+  });
+
   return (
     <Router>
       <Route exact path="/" component={ChooseModel} />

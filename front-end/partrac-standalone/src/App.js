@@ -17,7 +17,6 @@ function App() {
     setInitials: function(event){
       let input = event.target.value;
       setAppState({ ...appState, initials: input })
-      console.log(appState);
     }
   });
 

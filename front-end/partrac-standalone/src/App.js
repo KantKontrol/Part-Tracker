@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import logo from './logo.svg';
 import './App.css';
 import ChooseModel from "./pages/ChooseModel";
 import ChoosePart from "./pages/ChoosePart";
@@ -28,6 +27,11 @@ function App() {
         model: props.model,
         quantity: quantity
       }
+      /* Potential ideas
+          [model]: {
+            parts: []
+          }
+      */
 
       let oldPackage = appState.partPackage;
 

@@ -8,6 +8,17 @@ class PartModal extends Component {
 
     constructor(props){
         super(props);
+
+        this.state = {
+          part: {props},
+          quantity: 0
+        }
+    }
+
+    setQuantity = (event) => {
+      let value = event.target.value;
+      if(value >= 0)
+        this.setState({...this.state, quantity: value });
     }
 
     componentDidMount() {
@@ -55,7 +66,7 @@ class PartModal extends Component {
                 <p>Enter the quantity...</p>
                 <div className="col s4">
                     <div className="input-field inline">
-                        <input placeholder="0" id="quantity_inline" type="number" className="validate" />
+                        <input placeholder="0" id="quantity_inline" type="number" className="validate" value={this.state.quantity} onChange={this.setQuantity}/>
                     </div>
                     pc/pcs.
                 </div>

@@ -3,6 +3,8 @@
 		-Add electron use for partrac standalone - DONE
 		-Add routing for partrac standalone - DONE
 		-Create stateful component to handle item package state - IN PROGRESS
+			^ Create meaningful sorting and display for part package
+			^ Create component that displays info for parts w/ edit, remove
 
 	Partrac Admin & REST API Server
 		

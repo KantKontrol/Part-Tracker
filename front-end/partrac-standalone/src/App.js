@@ -12,7 +12,7 @@ function App() {
 
 
   const [appState, setAppState] = useState({
-    package: [],
+    partPackage: [],
     initials: "",
     setInitials: function(event){
       let input = event.target.value;
@@ -29,11 +29,11 @@ function App() {
         quantity: quantity
       }
 
-      let oldPackage = appState.package;
+      let oldPackage = appState.partPackage;
 
       oldPackage.push(newPart);
 
-      setAppState({ ...appState, package: oldPackage });
+      setAppState({ ...appState, partPackage: oldPackage });
     }
   });
 

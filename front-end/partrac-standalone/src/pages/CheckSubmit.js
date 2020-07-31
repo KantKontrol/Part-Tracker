@@ -5,7 +5,7 @@ import GContext from "../utils/GContext";
 
 export default function CheckSubmit(props){
 
-    const {initials, setInitials } = useContext(GContext);
+    const {initials, setInitials, partPackage } = useContext(GContext);
 
     return (
         <div>
@@ -19,6 +19,10 @@ export default function CheckSubmit(props){
                         <Link to="/" className="btn">{"<- Models"}</Link>
                     </div>
                     <div className="col s8"></div>
+                </div>
+
+                <div className="row">
+
                 </div>
 
 

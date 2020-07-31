@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import VersionStamp from "../components/VersionStamp";
 
-export default function CheckSubmit(){
+export default function CheckSubmit(props){
+
 
 
     return (

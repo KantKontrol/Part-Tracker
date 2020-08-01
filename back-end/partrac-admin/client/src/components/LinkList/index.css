@@ -1,0 +1,17 @@
+.link-list {
+    font-size: 1.3rem;
+    text-indent: 2rem;
+}
+
+.link-list a:link {
+    color:#26a69a !important;
+}
+
+.link-list a:hover {
+    color:#26a69a !important;
+    text-shadow: 2px 1px 5px #1fc2b2;
+}
+
+.link-list a:visited {
+    color:#26a69a !important;
+}

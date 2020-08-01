@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import { Link } from "react-router-dom";
 
 
 export default function LinkList(props){
@@ -8,8 +9,8 @@ export default function LinkList(props){
 
     return (
         <ul className="link-list">
-            <li><a href={refOne}>{titleOne}</a></li>
-            <li><a href={refTwo}>{titleTwo}</a></li>
+            <li><Link to={refOne}>{titleOne}</Link></li>
+            <li><Link to={refTwo}>{titleTwo}</Link></li>
         </ul>
     );
 }

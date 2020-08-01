@@ -11,17 +11,20 @@ export default function AdminLanding(){
             <div className="container">
                 <div className="row">
                     <div className="col s4">
+
                         <div className="section">
-                            <h1>Test</h1>
+                            <div className="header-title">Manage Data</div>
                         </div>
+
                         <div className="divider"></div>
+
                         <div className="section">
-                            <h1>Test 2</h1>
+                            <div className="header-title">Manage Chromebooks</div>
                         </div>
-                    </div>
-                    <div className="col s8">
 
                     </div>
+
+                    <div className="col s8"></div>
                 </div>
             </div>
         </div>

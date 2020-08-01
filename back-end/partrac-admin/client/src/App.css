@@ -2,6 +2,20 @@
   font-size: 2rem;
 }
 
+.login-title {
+  font-size: 4rem;
+  color: #26a69a;
+  text-shadow: 2px 2px 5px lightgray;
+  text-align: center;
+}
+
+.login-subtitle {
+  font-size: 2.5rem;
+  color: #26a69a;
+  text-shadow: 2px 2px 5px lightgray;
+  text-align: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

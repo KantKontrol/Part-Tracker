@@ -22,7 +22,7 @@ import LoginForm from "../components/LoginForm";
         return (
             <div className="container">
 
-                <div className="row" style={{ display: "block", marginTop: "250px"}}>
+                <div className="row">
 
                     <div className="row">
                         <div className="col s1"></div>

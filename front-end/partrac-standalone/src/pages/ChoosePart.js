@@ -12,7 +12,7 @@ export default function ChoosePart(){
             <VersionStamp />
             <h4 style={{ width: "max-content", margin: "20px auto"}}>Choose a part to add to package...</h4>
 
-            <div className="container">
+            <div className="container ">
                 <div className="row">
                     <div className="col s4">
                         <Link to="/" className="btn">{"<- Models"}</Link>

@@ -1,0 +1,10 @@
+.cus-nav-style {
+    position: relative;
+    background-color: #26a69a;
+}
+
+.brand-logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}

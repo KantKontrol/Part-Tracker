@@ -4,27 +4,30 @@ import LockIcon from '@material-ui/icons/Lock';
 import M from "materialize-css";
 
 
-export default function LoginForm(){
+export default function LoginForm(props){
+
+    let { username, password, updateInput} = props;
 
     useEffect(()=> {
         let collapsible = document.querySelectorAll(".collapsible");
 
         M.Collapsible.init(collapsible, {});
+        console.log(username)
     }, []);
 
     return (
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix"><AccountCircleIcon/></i>
-                        <input id="icon_user" type="text" class="validate" />
-                        <label for="icon_user">Username</label>
+        <div className="row">
+            <form className="col s12">
+                <div className="row">
+                    <div className="input-field col s12">
+                        <i className="material-icons prefix"><AccountCircleIcon/></i>
+                        <input id="username" type="text" className="validate" value={username} onChange={updateInput} />
+                        <label htmlFor="username">Username</label>
                     </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix"><LockIcon/></i>
-                        <input id="icon_lock" type="password" class="validate" />
-                        <label for="icon_lock">Password</label>
+                    <div className="input-field col s12">
+                        <i className="material-icons prefix"><LockIcon/></i>
+                        <input id="password" type="password" className="validate" value={password} onChange={updateInput} />
+                        <label htmlFor="password">Password</label>
                     </div>
                 </div>
             </form>

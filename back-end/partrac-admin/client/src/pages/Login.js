@@ -3,9 +3,20 @@ import LoginForm from "../components/LoginForm";
 
  class Login extends React.Component{
 
+    constructor(){
+        super();
 
+        this.state = {
+            username: "",
+            password: ""
+        }
+    }
 
-
+    updateInput = (event) => {
+        let name = event.target.id;
+        let value = event.target.value;
+        this.setState({ ...this.state, [name]: value });
+    }
 
     render() {
         return (
@@ -15,7 +26,7 @@ import LoginForm from "../components/LoginForm";
                         <div className="col s4"></div>
 
                         <div className="col s4">
-                            <LoginForm />
+                            <LoginForm username={this.state.username} password={this.state.password}  updateInput={this.updateInput} />
                         </div>
 
                         <div className="col s4"></div>

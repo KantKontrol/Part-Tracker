@@ -8,7 +8,7 @@
 
 	Partrac Admin & REST API Server
 		
-		-Create front end from wireframe(routing as well) 
+		-Create front end from wireframe(routing as well) - IN PROGRESS
 		-Create Express Server
 		-Create DB models/schema
 		-Connect front end to back end

@@ -11,7 +11,9 @@ import ViewInventory from "./pages/ViewInventory";
 function App() {
   return (
     <Router>
-        <ViewInventory />
+      <Route exact path="/login" component={Login}></Route>
+      <Route exact path="/home" component={AdminLanding}></Route>
+      <Route exact path="/viewinventory" component={ViewInventory}></Route>
     </Router>
   );
 }

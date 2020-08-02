@@ -12,7 +12,7 @@ export default function AdminLanding(){
             <main>
                 <div className="container">
                     <div className="row">
-                        <div className="col s4">
+                        <div className="col s12 m12 l6">
 
                             <div className="section">
                                 <div className="header-title">Manage Data</div>

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import Login from "./pages/Login";
 import AdminLanding from "./pages/AdminLanding";
 import ViewInventory from "./pages/ViewInventory";
+import ActivityLog from './pages/ActivityLog';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route exact path="/login" component={Login}></Route>
       <Route exact path="/home" component={AdminLanding}></Route>
       <Route exact path="/viewinventory" component={ViewInventory}></Route>
+      <Route exact path="/log" component={ActivityLog}></Route>
     </Router>
   );
 }

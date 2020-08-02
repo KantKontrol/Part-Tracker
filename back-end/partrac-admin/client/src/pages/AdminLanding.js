@@ -15,7 +15,7 @@ export default function AdminLanding(){
 
                         <div className="section">
                             <div className="header-title">Manage Data</div>
-                            <LinkList titleOne="View Inventory" refOne="/viewinventory"  titleTwo="View Activiy Log"  refTwo="/home"/>
+                            <LinkList titleOne="View Inventory" refOne="/viewinventory"  titleTwo="View Activiy Log"  refTwo="/log"/>
                         </div>
 
                         <div className="divider"></div>

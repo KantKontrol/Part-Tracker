@@ -6,7 +6,7 @@ export default function Header(){
 
     return (
         <header>
-              <nav>
+            <nav>
                 <div className="nav-wrapper cus-nav-style">
                     <a href="/home" className="brand-logo">ParTrac Admin</a>
                 </div>

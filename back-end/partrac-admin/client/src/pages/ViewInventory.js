@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import TableRow from "../components/TableRow";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
@@ -16,7 +17,8 @@ export default function ViewInventory(){
     return (
         <>
             <Header />
-            <div className="container">
+
+            <main className="container">
 
                 <h3 style={{ textAlign: "center" }}>Inventory</h3>
 
@@ -58,7 +60,9 @@ export default function ViewInventory(){
                     </div>
                 </div>
 
-            </div>
+            </main>
+
+            <Footer />
         </>
     );
 }

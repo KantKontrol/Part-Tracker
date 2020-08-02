@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import ModalTableRow from "../components/ModalTableRow";
 
 export default function ActivityLog(){
 
     return (
-        <div>
+        <>
             <Header />
 
             <div className="container">
@@ -44,6 +45,8 @@ export default function ActivityLog(){
                     <div className="col s2"></div>
                 </div>
             </div>
-        </div>
+
+            <Footer />
+        </>
     );
 }

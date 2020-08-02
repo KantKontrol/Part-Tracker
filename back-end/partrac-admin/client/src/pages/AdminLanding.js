@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import LinkList from "../components/LinkList";
+import Footer from "../components/Footer";
 
 export default function AdminLanding(){
 
@@ -30,6 +31,8 @@ export default function AdminLanding(){
                     <div className="col s8"></div>
                 </div>
             </div>
+
+            <Footer />
         </div>
     );
 }

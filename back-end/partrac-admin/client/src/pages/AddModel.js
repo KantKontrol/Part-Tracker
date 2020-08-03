@@ -22,7 +22,7 @@ class AddModel extends React.Component {
     handleStateChange = ({target}) => {
         let { id, value } = target;
 
-        if(id != "model_name"){
+        if(id != "model_name"){ //this works for now but kinda looks nasty
             if(value >= 0)
             this.setState({ ...this.state, [id]: value });
         }

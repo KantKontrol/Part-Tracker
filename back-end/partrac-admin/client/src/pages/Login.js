@@ -12,10 +12,9 @@ import LoginForm from "../components/LoginForm";
         }
     }
 
-    updateInput = (event) => {
-        let name = event.target.id;
-        let value = event.target.value;
-        this.setState({ ...this.state, [name]: value });
+    updateInput = ({ target }) => {
+        let { id,value } = target;
+        this.setState({ ...this.state, [id]: value });
     }
 
     render() {

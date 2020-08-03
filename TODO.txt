@@ -8,9 +8,10 @@
 
 	Partrac Admin & REST API Server
 		
-		-Create front end from wireframe(routing as well) - IN PROGRESS
-		-Innovate a way to use modals for log details
 		-Create Express Server -DONE
 		-Create DB models/schema - DONE
+		-Create front end from wireframe(routing as well) - IN PROGRESS
+		-Innovate a way to use modals for log details
+		-Manage input for add model, validate and control types
 		-Create Tests for DB
 		-Connect front end to back end -IN PROGRESS

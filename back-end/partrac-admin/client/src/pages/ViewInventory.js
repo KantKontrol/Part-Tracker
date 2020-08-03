@@ -15,15 +15,16 @@ export default function ViewInventory(){
 
 
     useEffect(() => {
-        let elems = document.querySelectorAll('select');
-        M.FormSelect.init(elems);
+        loadSelect();
         getInventory();
         getModels();
         setModel();
     }, []);
 
-
-
+    const loadSelect = () => {
+        let elems = document.querySelectorAll('select');
+        M.FormSelect.init(elems);
+    }
 
     const getInventory = () => {
         API.getInventory().then((res) => {
@@ -34,8 +35,7 @@ export default function ViewInventory(){
     const getModels = () => {
         API.getModels().then(res => {
             setModels(res.data);
-            let elems = document.querySelectorAll('select');
-            M.FormSelect.init(elems);
+            loadSelect();
         });
     }
 

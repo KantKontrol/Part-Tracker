@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import M from "materialize-css";
 import "./index.css";
 
 export default function ModelForm(props){
 
     let { addModel, stateChange, state } = props;
+
+
+    useEffect(() => {
+        let collapsible = document.querySelectorAll(".collapsible");
+        M.Collapsible.init(collapsible, {});
+    }, []);
 
     return (
         <div className="col s12 model-form-style">

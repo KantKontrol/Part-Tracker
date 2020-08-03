@@ -11,7 +11,6 @@ export default function LoginForm(props){
 
     useEffect(()=> {
         let collapsible = document.querySelectorAll(".collapsible");
-
         M.Collapsible.init(collapsible, {});
     }, []);
 

@@ -12,19 +12,19 @@ class AddModel extends React.Component {
 
         this.state = {
             model_name: "",
-            keyboard_quantity: 0,
-            screen_quantity: 0,
-            battery_quantity: 0,
-            mobo_quantity: 0
+            keyboard_quantity: Number,
+            screen_quantity: Number,
+            battery_quantity: Number,
+            mobo_quantity: Number
         }
     }
 
     handleStateChange = ({target}) => {
         let { id, value } = target;
 
-        if(id != "model_name"){ //this works for now but kinda looks nasty
+        if(id !== "model_name"){ //this works for now but kinda looks nasty
             if(value >= 0)
-            this.setState({ ...this.state, [id]: value });
+                this.setState({ ...this.state, [id]: parseInt(value) });
         }
         else
             this.setState({ ...this.state, [id]: value });

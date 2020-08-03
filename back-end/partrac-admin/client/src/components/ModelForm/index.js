@@ -3,7 +3,6 @@ import "./index.css";
 
 export default function ModelForm(props){
 
-
     let { addModel } = props;
 
     return (

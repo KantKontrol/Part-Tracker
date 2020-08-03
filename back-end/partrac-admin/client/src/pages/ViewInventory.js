@@ -5,24 +5,31 @@ import TableRow from "../components/TableRow";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
 import API from "../utils/API";
-import { Table } from "@material-ui/core";
 
 
 export default function ViewInventory(){
 
     const [inventory, setInventory] = useState([]);
+    const [models, setModels] = useState([]);
 
 
     useEffect(() => {
-        let elems = document.querySelectorAll('select');
-        M.FormSelect.init(elems);
         getInventory();
+        getModels();
     }, []);
 
 
     const getInventory = () => {
         API.getInventory().then((res) => {
             setInventory(res.data);
+        });
+    }
+
+    const getModels = () => {
+        API.getModels().then(res => {
+            setModels(res.data);
+            let elems = document.querySelectorAll('select');
+            M.FormSelect.init(elems);
         });
     }
 
@@ -41,13 +48,16 @@ export default function ViewInventory(){
                 </div>
 
                 <div className="row">
-                    <div className="input-field col l3 m4 s6">
+                    <div className="input-field col l3 m5 s7">
                         <select>
-                            <option value="" disabled selected>Select model(s)</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
+                            <option value="" disabled>Select model(s)</option>
+                            <option value="1">All</option>
+                            { models ? models.map((e, i) => {
+                                return <option key={i} value={i}>{e}</option>
+                            }): <option>NONE</option>}
+                        
                         </select>
+                        <label>Select model(s)</label>
                     </div>
                 </div>
 
@@ -65,7 +75,7 @@ export default function ViewInventory(){
                             <tbody>
                                 { inventory.length > 0 ? inventory.map(e => {
                                     return e.parts.map(p => {
-                                        return <TableRow model={e.name} part={p.title} quantity={p.quantity}/>
+                                        return <TableRow key={e._id} model={e.name} part={p.title} quantity={p.quantity}/>
                                     })
                                 }) : <TableRow model="No Data"></TableRow> }
                             </tbody>

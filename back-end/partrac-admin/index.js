@@ -1,8 +1,11 @@
-
+//8/3/2020 Nicholas DeRissio
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+const mongoose = require("mongoose");
+const mongourl = 'mongodb://localhost/partracdev';
 
 app.use([
     express.urlencoded({ extended: true }),
@@ -19,6 +22,13 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, () => {
-  console.log("🚀  Server server now on port", PORT, "👻 React App on Port 3000");
-});
+mongoose.connect(mongourl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  app.listen(PORT, () => {
+    console.log("🚀  Server server now on port", PORT, "👻 React App on Port 3000");
+  });
+})
+
+

@@ -11,8 +11,25 @@ class AddModel extends React.Component {
         super()
 
         this.state = {
-            
+            model_name: "",
+            keyboard_quantity: 0,
+            screen_quantity: 0,
+            battery_quantity: 0,
+            mobo_quantity: 0
         }
+    }
+
+    handleStateChange = ({target}) => {
+        let { id, value } = target;
+
+        if(id != "model_name"){
+            if(value >= 0)
+            this.setState({ ...this.state, [id]: value });
+        }
+        else
+            this.setState({ ...this.state, [id]: value });
+        
+        console.log(this.state)
     }
 
 
@@ -35,7 +52,7 @@ class AddModel extends React.Component {
                         <div className="col s2 m2 l2"></div>
     
                         <div className="col s8 m8 l8">
-                            <ModelForm />
+                            <ModelForm state={this.state} addModel={function(){}} stateChange={this.handleStateChange}/>
                         </div>
     
                         <div className="col s2 m2 l2"></div>

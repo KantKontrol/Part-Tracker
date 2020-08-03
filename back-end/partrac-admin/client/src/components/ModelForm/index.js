@@ -3,14 +3,14 @@ import "./index.css";
 
 export default function ModelForm(props){
 
-    let { addModel } = props;
+    let { addModel, stateChange, state } = props;
 
     return (
         <div className="col s12 model-form-style">
 
             <div className="row">
                 <div className="input-field col s4">
-                    <input id="model_name" type="text" className="validate" />
+                    <input id="model_name" type="text" className="validate" value={state.model_name} onChange={stateChange} />
                     <label htmlFor="model_name">Model Name</label>
                 </div>
             </div>
@@ -19,15 +19,15 @@ export default function ModelForm(props){
 
             <div className="row">
                 <div className="input-field col s4">
-                        <input id="keyboard_quantity" type="number" className="validate" />
+                        <input id="keyboard_quantity" type="number" className="validate" value={state.keyboard_quantity} onChange={stateChange} />
                         <label htmlFor="keyboard_quantity">Keyboard Quantity</label>
                 </div>
                 <div className="input-field col s4">
-                        <input id="screen_quantity" type="number" className="validate" />
+                        <input id="screen_quantity" type="number" className="validate" value={state.screen_quantity} onChange={stateChange}/>
                         <label htmlFor="screen_quantity">Screen Quantity</label>
                 </div>
                 <div className="input-field col s4">
-                        <input id="battery_quantity" type="number" className="validate" />
+                        <input id="battery_quantity" type="number" className="validate" value={state.battery_quantity} onChange={stateChange}/>
                         <label htmlFor="battery_quantity">Battery Quantity</label>
                 </div>
             </div>
@@ -35,7 +35,7 @@ export default function ModelForm(props){
             
             <div className="row">
                 <div className="input-field col s4">
-                        <input id="mobo_quantity" type="number" className="validate" />
+                        <input id="mobo_quantity" type="number" className="validate" value={state.mobo_quantity} onChange={stateChange}/>
                         <label htmlFor="mobo_quantity">Mobo Quantity</label>
                 </div>
             </div>

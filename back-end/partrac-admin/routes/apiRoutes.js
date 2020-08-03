@@ -11,4 +11,16 @@ module.exports = (app) => {
             res.send(data);
         });
     });
+
+    app.post("/model", (req,res)=>{
+
+        let newModel = req.body.newModel;
+
+        inventoryController.addModel(newModel, (success) => {
+            if(success)
+                res.send("success!")
+            else
+                res.send("fail")
+        });
+    });
 }

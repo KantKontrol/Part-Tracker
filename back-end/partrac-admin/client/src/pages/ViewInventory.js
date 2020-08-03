@@ -11,12 +11,18 @@ export default function ViewInventory(){
 
     const [inventory, setInventory] = useState([]);
     const [models, setModels] = useState([]);
+    const [filterModel, setFilterModel] = useState("All");
 
 
     useEffect(() => {
+        let elems = document.querySelectorAll('select');
+        M.FormSelect.init(elems);
         getInventory();
         getModels();
+        setModel();
     }, []);
+
+
 
 
     const getInventory = () => {
@@ -31,6 +37,13 @@ export default function ViewInventory(){
             let elems = document.querySelectorAll('select');
             M.FormSelect.init(elems);
         });
+    }
+
+    const setModel = () => {
+        let option = document.getElementById('modelSelect');
+        option.onchange = ({target}) => {
+            setFilterModel(target.value);
+        }
     }
 
     return (
@@ -49,11 +62,11 @@ export default function ViewInventory(){
 
                 <div className="row">
                     <div className="input-field col l3 m5 s7">
-                        <select>
+                        <select id="modelSelect">
                             <option value="" disabled>Select model(s)</option>
-                            <option value="1">All</option>
+                            <option value="All">All</option>
                             { models ? models.map((e, i) => {
-                                return <option key={i} value={i}>{e}</option>
+                                return <option key={i} value={e}>{e}</option>
                             }): <option>NONE</option>}
                         
                         </select>
@@ -73,11 +86,19 @@ export default function ViewInventory(){
                             </thead>
 
                             <tbody>
-                                { inventory.length > 0 ? inventory.map(e => {
-                                    return e.parts.map(p => {
-                                        return <TableRow key={e._id} model={e.name} part={p.title} quantity={p.quantity}/>
-                                    })
-                                }) : <TableRow model="No Data"></TableRow> }
+                                { 
+                                    inventory.length > 0 ? inventory.map(e => {
+
+                                        if(filterModel === "All")
+                                            return e.parts.map(p => {
+                                                return <TableRow key={e._id + p.title} model={e.name} part={p.title} quantity={p.quantity}/>
+                                            })
+                                        if(e.name === filterModel)
+                                            return e.parts.map(p => {
+                                                return <TableRow key={e._id + p.title} model={e.name} part={p.title} quantity={p.quantity}/>
+                                            })
+                                    }) : <TableRow model="No Data"></TableRow>  
+                                }
                             </tbody>
                         </table>
 

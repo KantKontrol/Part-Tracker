@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import ChooseModel from "./pages/ChooseModel";
 import ChoosePart from "./pages/ChoosePart";
@@ -48,9 +48,12 @@ function App() {
   return (
     <GContext.Provider value={appState}>
       <Router>
-        <Route exact path="/" component={ChooseModel} />
-        <Route path="/checksubmit" component={CheckSubmit} />
-        <Route path="/choosepart" component={ChoosePart} />
+        <Switch>
+          <Route exact path="/" component={ChooseModel} />
+          <Route path="/checksubmit" component={CheckSubmit} />
+          <Route path="/choosepart" component={ChoosePart} />
+          <Route component={ChooseModel} />
+        </Switch>
         <Footer />
       </Router>
     </GContext.Provider>

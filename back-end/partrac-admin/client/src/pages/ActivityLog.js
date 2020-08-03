@@ -10,7 +10,7 @@ export default function ActivityLog(){
         <>
             <Header />
 
-            <div className="container">
+            <main className="container push-footer">
 
                 <h3 style={{ textAlign: "center" }}>Activity Log</h3>
 
@@ -44,7 +44,7 @@ export default function ActivityLog(){
 
                     <div className="col s2"></div>
                 </div>
-            </div>
+            </main>
 
             <Footer />
         </>

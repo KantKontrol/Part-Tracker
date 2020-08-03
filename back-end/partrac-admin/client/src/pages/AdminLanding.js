@@ -9,9 +9,9 @@ export default function AdminLanding(){
         <>
             <Header />
             
-            <main>
-                <div className="container">
+            <main className="container push-footer">
                     <div className="row">
+
                         <div className="col s12 m12 l6">
 
                             <div className="section">
@@ -27,10 +27,8 @@ export default function AdminLanding(){
                             </div>
 
                         </div>
-
-                        <div className="col s8"></div>
+                        
                     </div>
-                </div>
             </main>
 
             <Footer />

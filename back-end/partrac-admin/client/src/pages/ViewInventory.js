@@ -18,7 +18,7 @@ export default function ViewInventory(){
         <>
             <Header />
 
-            <main className="container">
+            <main className="container push-footer">
 
                 <h3 style={{ textAlign: "center" }}>Inventory</h3>
 

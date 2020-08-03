@@ -1,12 +1,26 @@
 const mongoose = require("mongoose");
 
-const ModelSchema = mongoose.Schema({
-    ModelName: {
-        type: mongoose.Schema.Types.String
+const Schema = mongoose.Schema;
+
+const PartSchema = Schema({
+    title: {
+        type: String
     },
-    parts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Part"}]
+    quantity: {
+        type: Number
+    },
+    imgSrc: {
+        type: String
+    }
+});
+
+const ModelSchema = Schema({
+    name: {
+        type: String
+    },
+    parts: [PartSchema]
 });
 
 const Model = mongoose.model("Model", ModelSchema);
 
-export default Model;
+module.exports = Model;

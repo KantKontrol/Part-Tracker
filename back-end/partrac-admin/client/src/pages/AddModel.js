@@ -12,10 +12,10 @@ class AddModel extends React.Component {
 
         this.state = {
             model_name: "",
-            keyboard_quantity: Number,
-            screen_quantity: Number,
-            battery_quantity: Number,
-            mobo_quantity: Number
+            keyboard_quantity: "",
+            screen_quantity: "",
+            battery_quantity: "",
+            mobo_quantity: ""
         }
     }
 

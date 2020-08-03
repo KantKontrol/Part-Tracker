@@ -26,15 +26,15 @@ export default function ModelForm(props){
 
             <div className="row">
                 <div className="input-field col s4">
-                        <input id="keyboard_quantity" type="number" className="validate" value={state.keyboard_quantity} onChange={stateChange} />
+                        <input id="keyboard_quantity" type="number" min="0" className="validate" value={state.keyboard_quantity} onChange={stateChange} />
                         <label htmlFor="keyboard_quantity">Keyboard Quantity</label>
                 </div>
                 <div className="input-field col s4">
-                        <input id="screen_quantity" type="number" className="validate" value={state.screen_quantity} onChange={stateChange}/>
+                        <input id="screen_quantity" type="number" min="0" className="validate" value={state.screen_quantity} onChange={stateChange}/>
                         <label htmlFor="screen_quantity">Screen Quantity</label>
                 </div>
                 <div className="input-field col s4">
-                        <input id="battery_quantity" type="number" className="validate" value={state.battery_quantity} onChange={stateChange}/>
+                        <input id="battery_quantity" type="number" min="0" className="validate" value={state.battery_quantity} onChange={stateChange}/>
                         <label htmlFor="battery_quantity">Battery Quantity</label>
                 </div>
             </div>
@@ -42,7 +42,7 @@ export default function ModelForm(props){
             
             <div className="row">
                 <div className="input-field col s4">
-                        <input id="mobo_quantity" type="number" className="validate" value={state.mobo_quantity} onChange={stateChange}/>
+                        <input id="mobo_quantity" type="number" min="0" className="validate" value={state.mobo_quantity} onChange={stateChange}/>
                         <label htmlFor="mobo_quantity">Mobo Quantity</label>
                 </div>
             </div>

@@ -12,6 +12,17 @@ module.exports = (app) => {
         });
     });
 
+    app.get("/inventory/model", (req,res) => { //this route is intended for all of the inventory
+        inventoryController.getInventory((err, data) => {
+            if(err){
+                res.send(err)
+            }
+
+            let models = data.map(e => e.name)
+            res.send(models);
+        });
+    });
+
     app.post("/model", (req,res)=>{
 
         let newModel = req.body.newModel;

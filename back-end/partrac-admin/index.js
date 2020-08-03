@@ -17,6 +17,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Link API Routes here
+//db.Model.create({name: "HP G6", parts: [ {title: "Screen", quantity: 30 }, {title: "Keyboard", quantity: 10}]}, (err, data) => console.log(err));
+//db.Model.create({name: "HP G5", parts: [ {title: "Keyboard", quantity: 10}]}, (err, data) => console.log(err));
 
 require("./routes/apiRoutes")(app);
 

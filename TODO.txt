@@ -10,7 +10,7 @@
 		
 		-Create front end from wireframe(routing as well) - IN PROGRESS
 		-Innovate a way to use modals for log details
-		-Create Express Server
+		-Create Express Server -DONE
 		-Create DB models/schema - DONE
 		-Create Tests for DB
-		-Connect front end to back end
+		-Connect front end to back end -IN PROGRESS

@@ -13,7 +13,6 @@ export default function ViewInventory(){
     const [models, setModels] = useState([]);
     const [filterModel, setFilterModel] = useState("All");
 
-
     useEffect(() => {
         loadSelect();
         getInventory();
@@ -92,12 +91,13 @@ export default function ViewInventory(){
                                         if(filterModel === "All")
                                             return e.parts.map(p => {
                                                 return <TableRow key={e._id + p.title} model={e.name} part={p.title} quantity={p.quantity}/>
-                                            })
+                                            });
                                         if(e.name === filterModel)
                                             return e.parts.map(p => {
                                                 return <TableRow key={e._id + p.title} model={e.name} part={p.title} quantity={p.quantity}/>
-                                            })
-                                    }) : <TableRow model="No Data"></TableRow>  
+                                            });
+
+                                    }) : <TableRow model="Loading..."></TableRow>  
                                 }
                             </tbody>
                         </table>

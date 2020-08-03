@@ -23,7 +23,7 @@ export default function AdminLanding(){
 
                             <div className="section">
                                 <div className="header-title">Manage Chromebooks</div>
-                                <LinkList titleOne="Add a Model" refOne="/home"  titleTwo="Edit a Model"  refTwo="/home"/>
+                                <LinkList titleOne="Add a Model" refOne="/addmodel"  titleTwo="Edit a Model"  refTwo="/home"/>
                             </div>
 
                         </div>

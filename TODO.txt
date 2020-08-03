@@ -12,4 +12,5 @@
 		-Innovate a way to use modals for log details
 		-Create Express Server
 		-Create DB models/schema - DONE
+		-Create Tests for DB
 		-Connect front end to back end

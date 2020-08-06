@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ModalTableRow from "../components/ModalTableRow";
 
 export default function ActivityLog(){
+
+    const [logs, setLogs] = useState([]);
+    const [currentLog, setCurrentLog] = useState([]);
 
     return (
         <>

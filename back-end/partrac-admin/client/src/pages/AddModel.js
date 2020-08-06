@@ -55,7 +55,6 @@ class AddModel extends React.Component {
                         <div className="col s2 m2 l2"></div>
                     </div>
     
-    
                 </main>
     
                 <Footer />

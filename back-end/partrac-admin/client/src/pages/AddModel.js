@@ -12,10 +12,10 @@ class AddModel extends React.Component {
 
         this.state = {
             model_name: "",
-            keyboard_quantity: "",
-            screen_quantity: "",
-            battery_quantity: "",
-            mobo_quantity: ""
+            keyboard_quantity: 0,
+            screen_quantity: 0,
+            battery_quantity: 0,
+            mobo_quantity: 0
         }
     }
 
@@ -28,10 +28,7 @@ class AddModel extends React.Component {
         }
         else
             this.setState({ ...this.state, [id]: value });
-        
-        console.log(this.state)
     }
-
 
     render(){
         return (

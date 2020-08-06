@@ -9,7 +9,10 @@ export default function ModelForm(props){
 
     useEffect(() => {
         let collapsible = document.querySelectorAll(".collapsible");
+        let label = document.querySelectorAll("label");
+
         M.Collapsible.init(collapsible, {});
+        
     }, []);
 
     return (
@@ -27,15 +30,15 @@ export default function ModelForm(props){
             <div className="row">
                 <div className="input-field col s4">
                         <input id="keyboard_quantity" type="number" min="0" className="validate" value={state.keyboard_quantity} onChange={stateChange} />
-                        <label htmlFor="keyboard_quantity">Keyboard Quantity</label>
+                        <label htmlFor="keyboard_quantity"  className="active">Keyboard Quantity</label>
                 </div>
                 <div className="input-field col s4">
                         <input id="screen_quantity" type="number" min="0" className="validate" value={state.screen_quantity} onChange={stateChange}/>
-                        <label htmlFor="screen_quantity">Screen Quantity</label>
+                        <label htmlFor="screen_quantity"  className="active">Screen Quantity</label>
                 </div>
                 <div className="input-field col s4">
                         <input id="battery_quantity" type="number" min="0" className="validate" value={state.battery_quantity} onChange={stateChange}/>
-                        <label htmlFor="battery_quantity">Battery Quantity</label>
+                        <label htmlFor="battery_quantity"  className="active">Battery Quantity</label>
                 </div>
             </div>
 
@@ -43,7 +46,7 @@ export default function ModelForm(props){
             <div className="row">
                 <div className="input-field col s4">
                         <input id="mobo_quantity" type="number" min="0" className="validate" value={state.mobo_quantity} onChange={stateChange}/>
-                        <label htmlFor="mobo_quantity">Mobo Quantity</label>
+                        <label htmlFor="mobo_quantity"  className="active">Mobo Quantity</label>
                 </div>
             </div>
 

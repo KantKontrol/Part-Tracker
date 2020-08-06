@@ -6,13 +6,9 @@ export default function ModelForm(props){
 
     let { addModel, stateChange, state } = props;
 
-
     useEffect(() => {
         let collapsible = document.querySelectorAll(".collapsible");
-        let label = document.querySelectorAll("label");
-
         M.Collapsible.init(collapsible, {});
-        
     }, []);
 
     return (
@@ -48,12 +44,11 @@ export default function ModelForm(props){
 
             <div className="row">
                 <div className="col s8"></div>
-
                 <div className="col s4">
                     <button className="btn" style={{ float: "right" }} onClick={() => addModel()}>Add Model</button>
                 </div>
             </div>
-
+            
         </div>
     );
 }

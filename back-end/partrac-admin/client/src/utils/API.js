@@ -7,6 +7,9 @@ const API = {
     },
     getModels: function(){
         return axios.get("/inventory/model");
+    },
+    getLogs: function(){
+        return axios.get("/inventory/logs");
     }
 }
 

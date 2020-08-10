@@ -12,7 +12,7 @@ module.exports = (app) => {
         });
     });
 
-    app.get("/inventory/model", (req,res) => { //this route is intended for all of the inventory
+    app.get("/inventory/model", (req,res) => { //this route is intended for all models
         inventoryController.getInventory((err, data) => {
             if(err){
                 res.send(err)
@@ -23,15 +23,24 @@ module.exports = (app) => {
         });
     });
 
-    app.post("/model", (req,res)=>{
+    app.post("/model", (req,res)=>{ //this route is intended to add models
 
         let newModel = req.body.newModel;
 
         inventoryController.addModel(newModel, (success) => {
             if(success)
-                res.send("success!")
+                res.send("success!");
             else
-                res.send("fail")
+                res.send("fail");
+        });
+    });
+
+
+    app.get("/inventory/logs", (req,res) => {
+        inventoryController.getLogs((err,data) => {
+            if(err)throw err;
+
+            res.send(data);
         });
     });
 }

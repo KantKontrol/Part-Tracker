@@ -1,5 +1,4 @@
 const db = require("../models");
-const { model } = require("../models/Log");
 
 module.exports = {
     getInventory: function(cb){ //gets all models and their parts in inventory
@@ -18,8 +17,13 @@ module.exports = {
             model.parts.push(part);
 
             model.save().then(() => {
-                cb(true)
+                cb(true);
             });
+        });
+    },
+    getLogs: function(cb){
+        db.Log.find({}, (err, data) => {
+            cb(err, data);
         });
     }
 }

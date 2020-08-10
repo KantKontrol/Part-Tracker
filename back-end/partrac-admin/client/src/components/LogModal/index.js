@@ -41,7 +41,7 @@ class LogModal extends Component {
         inDuration: 250,
         outDuration: 250,
         opacity: 0.5,
-        dismissible: false,
+        dismissible: true,
         startingTop: "4%",
         endingTop: "10%"
       };
@@ -69,7 +69,14 @@ class LogModal extends Component {
                 <h4><strong>Log</strong></h4>
                 <p>{`Someone with initials ${this.props.initials} checked out ${this.props.quantity} parts.`}</p>
                 <h4><strong>Parts</strong></h4>
-                <div className="col s4">
+                <div className="col s4" style={{ overflowY: "scroll", maxHeight: "150px"}}>
+
+                    <div>Dell 3120</div>
+                    <ul>
+                      <li>Screen: 7</li>
+                      <li>Battery: 4</li>
+                    </ul>
+
 
                     <div>Dell 3120</div>
                     <ul>
@@ -80,7 +87,7 @@ class LogModal extends Component {
                 </div>
             </div>
             <div className="modal-footer">
-                <a href="#!" className="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                <a href="#!" className="modal-close waves-effect waves-green btn-flat">Close</a>
             </div>
           </div>
         </>

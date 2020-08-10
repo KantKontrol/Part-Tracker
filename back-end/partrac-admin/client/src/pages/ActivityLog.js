@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ModalTableRow from "../components/ModalTableRow";
+import LogModal from "../components/LogModal";
 
 export default function ActivityLog(){
 
     const [logs, setLogs] = useState([]);
-    const [currentLog, setCurrentLog] = useState([]);
+    const [currentLog, setCurrentLog] = useState({});
+
 
     return (
         <>
@@ -38,7 +40,7 @@ export default function ActivityLog(){
                             </thead>
 
                             <tbody>
-                                <ModalTableRow id="1" initials="ND" numParts="4"  />
+                                <ModalTableRow id="1" initials="ND" numParts="4"  setCurrentLog={setCurrentLog}/>
                                 <ModalTableRow id="2" initials="ND" numParts="6" />
                                 <ModalTableRow id="3" initials="BS" numParts="13" />
                             </tbody>
@@ -47,6 +49,7 @@ export default function ActivityLog(){
 
                     <div className="col s2"></div>
                 </div>
+                <LogModal props={currentLog}/>
             </main>
 
             <Footer />

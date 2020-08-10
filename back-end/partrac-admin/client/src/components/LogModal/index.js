@@ -64,19 +64,23 @@ class LogModal extends Component {
             className="modal"
           >
             <div className="modal-content">
-                <img className="modal-image" src="https://via.placeholder.com/150" alt="..."></img>
-                <h4>{this.props.title + " - " + this.props.model}</h4>
-                <p>Enter the quantity...</p>
+                <h4>Log Details</h4>
+                <div>DATE</div>
+                <h4><strong>Log</strong></h4>
+                <p>{`Someone with initials ${this.props.initials} checked out ${this.props.quantity} parts.`}</p>
+                <h4><strong>Parts</strong></h4>
                 <div className="col s4">
-                    <div className="input-field inline">
-                        <input placeholder="0" id="quantity_inline" type="number" className="validate" value={this.state.quantity} onChange={this.setQuantity}/>
-                    </div>
-                    pc/pcs.
+
+                    <div>Dell 3120</div>
+                    <ul>
+                      <li>Screen: 7</li>
+                      <li>Battery: 4</li>
+                    </ul>
+      
                 </div>
             </div>
             <div className="modal-footer">
                 <a href="#!" className="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                <a href="#!" onClick={() => this.props.addPart(this.state)} className="modal-close waves-effect waves-green btn-flat">Submit</a>
             </div>
           </div>
         </>

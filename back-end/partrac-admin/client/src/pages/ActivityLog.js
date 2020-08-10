@@ -19,7 +19,7 @@ export default function ActivityLog(){
     }
 
     const modifyCurrentLog = (data) => {
-        console.log(data)
+        setCurrentLog(data);
     }
 
     useState(() => {

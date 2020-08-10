@@ -5,10 +5,22 @@ import Footer from "../components/Footer";
 import ModalTableRow from "../components/ModalTableRow";
 import LogModal from "../components/LogModal";
 
+import API from "../utils/API";
+
 export default function ActivityLog(){
 
     const [logs, setLogs] = useState([]);
     const [currentLog, setCurrentLog] = useState({});
+
+    const getLogs = () => {
+        API.getLogs().then(res => {
+            setLogs(res.data);
+        });
+    }
+
+    useState(() => {
+        getLogs();
+    });
 
 
     return (

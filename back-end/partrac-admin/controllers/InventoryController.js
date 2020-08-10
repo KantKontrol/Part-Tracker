@@ -6,12 +6,12 @@ module.exports = {
             cb(err, data);
         });
     },
-    addModel: function(model, cb){
+    addModel: function(model, cb){ //this creates a model
         db.Model.create(model, (err, data) => {
             cb(err, data);
         });
     },
-    addPart: function(modelId, part, cb){
+    addPart: function(modelId, part, cb){ //this adds a part to an existing model
         db.Model.findOne({ _id: ObjectId(modelId)}, (err, model) => {
 
             model.parts.push(part);
@@ -21,7 +21,7 @@ module.exports = {
             });
         });
     },
-    getLogs: function(cb){
+    getLogs: function(cb){ //this gets all logs
         db.Log.find({}, (err, data) => {
             cb(err, data);
         });

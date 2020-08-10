@@ -36,7 +36,7 @@ module.exports = (app) => {
     });
 
 
-    app.get("/inventory/logs", (req,res) => {
+    app.get("/inventory/logs", (req,res) => { //this route is intended to get log data
         inventoryController.getLogs((err,data) => {
             if(err)throw err;
 

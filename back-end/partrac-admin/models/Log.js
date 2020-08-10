@@ -1,17 +1,13 @@
 const mongoose = require("mongoose");
+const ModelSchema = require("./Schema");
+
 
 
 const LogSchema = mongoose.Schema({
     initials: {
         type: String
     },
-    models: [{
-        type: String,
-        parts: [{
-            name: String,
-            quantity: Number,
-        }]
-    }],
+    models: [ModelSchema],
     partTotal: {
         type: Number
     }

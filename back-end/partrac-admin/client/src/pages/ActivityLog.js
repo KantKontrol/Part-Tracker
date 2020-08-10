@@ -18,6 +18,10 @@ export default function ActivityLog(){
         });
     }
 
+    const modifyCurrentLog = (data) => {
+        console.log(data)
+    }
+
     useState(() => {
         getLogs();
     });
@@ -52,7 +56,7 @@ export default function ActivityLog(){
                             </thead>
 
                             <tbody>
-                                <ModalTableRow id="1" initials="ND" numParts="4"  setCurrentLog={setCurrentLog}/>
+                                <ModalTableRow id="1" initials="ND" numParts="4"  modifyCurrentLog={modifyCurrentLog}/>
                                 <ModalTableRow id="2" initials="ND" numParts="6" />
                                 <ModalTableRow id="3" initials="BS" numParts="13" />
                             </tbody>
@@ -61,7 +65,7 @@ export default function ActivityLog(){
 
                     <div className="col s2"></div>
                 </div>
-                <LogModal props={currentLog}/>
+                <LogModal id="testModal"/>
             </main>
 
             <Footer />

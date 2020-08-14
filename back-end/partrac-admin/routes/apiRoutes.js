@@ -13,6 +13,7 @@ module.exports = (app) => {
     });
 
     app.get("/inventory/model", (req,res) => { //this route is intended for all models
+        console.log("Model request")
         inventoryController.getInventory((err, data) => {
             if(err){
                 res.send(err)

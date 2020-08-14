@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import VersionStamp from "../components/VersionStamp";
 import ModelSelectDisplay from "../components/ModelSelectDisplay";
 import { Link } from "react-router-dom";
+import API from "../utils/API";
 
 export default function ChooseModel(){
 
+    const [models, setModels] = useState([]);
+
+
+    const getModels = () => {
+        API.getModels().then(res => {
+            console.log(res.data)
+            setModels(res.data);
+        });
+    }
+
+    useEffect(() => {
+        getModels();
+    }, []);
+
+    
     return (
         <div>
             <VersionStamp />
@@ -18,12 +34,9 @@ export default function ChooseModel(){
                     </div>
                 </div>
                 <div className="row">
-                    <ModelSelectDisplay />
-                    <ModelSelectDisplay />
-                    <ModelSelectDisplay />
-                    <ModelSelectDisplay />
-                    <ModelSelectDisplay />
-                    <ModelSelectDisplay />
+                    { models ? models.map(e => {
+                        return <ModelSelectDisplay key={e} title={e}/>;
+                    }) : <h1>No Models Found</h1>}
                 </div>
             </div>
         </div>

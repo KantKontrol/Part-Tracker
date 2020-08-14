@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import M from "materialize-css";
+import LogDataObj from "../LogDataObj";
 
 
 
@@ -8,13 +9,9 @@ class LogModal extends Component {
     constructor(props){
         super(props);
 
-        console.log(props)
-
         this.state = {
-          props,
-          quantity: 0
+          props
         }
-
     }
 
   
@@ -67,23 +64,12 @@ class LogModal extends Component {
                 <h4>Log Details</h4>
                 <div>DATE</div>
                 <h4><strong>Log</strong></h4>
-                <p>{`Someone with initials ${this.props.initials} checked out ${this.props.quantity} parts.`}</p>
+                <p>{`Someone with initials ${this.props.details.initials} checked out ${this.props.details.quantity} parts.`}</p>
                 <h4><strong>Parts</strong></h4>
                 <div className="col s4" style={{ overflowY: "scroll", maxHeight: "150px"}}>
-
-                    <div>Dell 3120</div>
-                    <ul>
-                      <li>Screen: 7</li>
-                      <li>Battery: 4</li>
-                    </ul>
-
-
-                    <div>Dell 3120</div>
-                    <ul>
-                      <li>Screen: 7</li>
-                      <li>Battery: 4</li>
-                    </ul>
-      
+                  { this.props.details.models ? this.props.details.models.map(e => {
+                      return <LogDataObj title={e.name} parts={e.parts}/>
+                  }) : <h4>No Data Available</h4>}
                 </div>
             </div>
             <div className="modal-footer">

@@ -57,8 +57,8 @@ export default function ActivityLog(){
 
                             <tbody>
                                 <ModalTableRow id="1" initials="ND" quantity="4"  modifyCurrentLog={modifyCurrentLog}/>
-                                <ModalTableRow id="2" initials="ND" quantity="6" />
-                                <ModalTableRow id="3" initials="BS" quantity="13" />
+                                <ModalTableRow id="2" initials="ND" quantity="6" modifyCurrentLog={modifyCurrentLog}/>
+                                <ModalTableRow id="3" initials="BS" quantity="13" modifyCurrentLog={modifyCurrentLog}/>
                             </tbody>
                         </table>
                     </div>

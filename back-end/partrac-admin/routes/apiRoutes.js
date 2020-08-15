@@ -20,6 +20,14 @@ module.exports = (app) => {
             cb(null, false);
     }
 
+    const upload = multer({
+        storage: storage,
+        limits: {
+            fileSize: 1024 * 1024 * 5
+        },
+        fileFilter: fileFilter
+    });
+
     app.get("/inventory", (req,res) => { //this route is intended for all of the inventory
         inventoryController.getInventory((err, data) => {
             if(err){

@@ -12,8 +12,13 @@ module.exports = (app) => {
         }
     });
 
-
-
+    const fileFilter = function(req, file, cb){
+        if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
+            cb(null, true);
+        }
+        else
+            cb(null, false);
+    }
 
     app.get("/inventory", (req,res) => { //this route is intended for all of the inventory
         inventoryController.getInventory((err, data) => {

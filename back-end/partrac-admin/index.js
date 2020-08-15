@@ -12,6 +12,8 @@ app.use([
     express.json()
 ]);
 
+app.use("/uimage", express.static("uimage"));
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }

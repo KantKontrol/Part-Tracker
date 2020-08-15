@@ -1,6 +1,18 @@
 const inventoryController = require("../controllers/InventoryController");
+const multer = require("multer");
 
 module.exports = (app) => {
+
+    const storage = multer.diskStorage({
+        destination: function(req, file, cb){
+            cb(null, './uimage/');
+        },
+        filename: function(req, file, cb){
+            cb(null, Date.now() + file.originalname);
+        }
+    });
+
+
 
 
     app.get("/inventory", (req,res) => { //this route is intended for all of the inventory

@@ -19,6 +19,9 @@ export default function ModelForm(props){
                     <input id="model_name" type="text" className="validate" value={state.model_name} onChange={stateChange} />
                     <label htmlFor="model_name">Model Name</label>
                 </div>
+                <div className="input-field col s6 m4 l4">
+                    <input id="file_upload" type="file" accept="image/png, image/jpeg"/>
+                </div>
             </div>
 
             <h5 style={{ textAlign: "center" }}>Enter Part Quantity</h5>

@@ -2,6 +2,19 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+
+const ImageSchema = Schema({
+    imageName: {
+        type: String,
+        default: "none",
+        required: true
+    },
+    imageData: {
+        type: String,
+        required: true
+    }
+});
+
 const PartSchema = Schema({
     title: {
         type: String
@@ -9,9 +22,7 @@ const PartSchema = Schema({
     quantity: {
         type: Number
     },
-    imgSrc: {
-        type: String
-    }
+    img: ImageSchema
 });
 
 const ModelSchema = Schema({
@@ -19,9 +30,7 @@ const ModelSchema = Schema({
         type: String
     },
     parts: [PartSchema],
-    imgSrc: {
-        type: String
-    }
+    img: ImageSchema
 });
 
-module.exports = ModelSchema, PartSchema;
+module.exports = ModelSchema, PartSchema, ImageSchema;

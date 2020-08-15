@@ -4,7 +4,7 @@ import "./index.css";
 
 export default function ModelForm(props){
 
-    let { addModel, stateChange, state } = props;
+    let { addModel, stateChange, processImage, state } = props;
 
     useEffect(() => {
         let collapsible = document.querySelectorAll(".collapsible");
@@ -20,7 +20,7 @@ export default function ModelForm(props){
                     <label htmlFor="model_name">Model Name</label>
                 </div>
                 <div className="input-field col s6 m4 l4">
-                    <input id="file_upload" type="file" accept="image/png, image/jpeg"/>
+                    <input id="file_upload" type="file" accept="image/png, image/jpeg" onChange={(e) => processImage(e)}/>
                 </div>
             </div>
 

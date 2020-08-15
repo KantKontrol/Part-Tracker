@@ -21,8 +21,7 @@ const PartSchema = Schema({
     },
     quantity: {
         type: Number
-    },
-    img: ImageSchema
+    }
 });
 
 const ModelSchema = Schema({

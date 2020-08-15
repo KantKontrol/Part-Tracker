@@ -49,9 +49,24 @@ module.exports = (app) => {
         });
     });
 
-    app.post("/model", (req,res)=>{ //this route is intended to add models
+    app.post("/model", upload.single('imageData'), (req,res)=>{ //this route is intended to add models
+        console.log(req.body)
 
-        let newModel = req.body.newModel;
+        let data = req.body;
+
+        let newModel = {
+            name: data.model_name,
+            parts: data.parts.map(e => {
+                return {
+                    title: e.title,
+                    quantity: e.quantity
+                }
+            }),
+            img: {
+                imageName: data.imageName,
+                imageData: data.imageData
+            }
+        }
 
         inventoryController.addModel(newModel, (success) => {
             if(success)

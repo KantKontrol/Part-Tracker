@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ModelForm from "../components/ModelForm";
+import axios from "axios";
 
 
 class AddModel extends React.Component {
@@ -12,10 +13,12 @@ class AddModel extends React.Component {
 
         this.state = {
             model_name: "",
+            parts: [],
             keyboard_quantity: 0,
             screen_quantity: 0,
             battery_quantity: 0,
-            mobo_quantity: 0
+            mobo_quantity: 0,
+            multerImg: DefaultImg
         }
     }
 
@@ -28,6 +31,12 @@ class AddModel extends React.Component {
         }
         else
             this.setState({ ...this.state, [id]: value });
+    }
+
+    addModel = () => {
+        axios.post("/model", this.state).then(res => {
+            console.log(res);
+        });
     }
 
     render(){
@@ -49,7 +58,7 @@ class AddModel extends React.Component {
                         <div className="col s2 m2 l2"></div>
     
                         <div className="col s8 m8 l8">
-                            <ModelForm state={this.state} addModel={function(){}} stateChange={this.handleStateChange}/>
+                            <ModelForm state={this.state} addModel={this.addModel} stateChange={this.handleStateChange}/>
                         </div>
     
                         <div className="col s2 m2 l2"></div>

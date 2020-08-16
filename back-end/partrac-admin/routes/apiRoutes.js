@@ -67,7 +67,7 @@ module.exports = (app) => {
 
         let newModel = {
             name: data.model_name,
-            parts: []
+            parts: data.parts
         }
 
         inventoryController.addModel(newModel, (err, result) => {

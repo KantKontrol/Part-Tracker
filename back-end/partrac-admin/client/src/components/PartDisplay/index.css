@@ -1,0 +1,17 @@
+.part-display {
+    display: block;
+    background-color: rgba(185, 178, 178, 0.658) !important;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px !important;
+}
+
+.part-display-text {
+    padding: 4px;
+    font-size: 1.4rem;
+    float: left;
+}
+
+.part-remove-button {
+    float: right;
+}

@@ -1,9 +1,10 @@
 .quantity-text {
     font-size: 1.4rem;
     text-align: center;
+    width: 25px;
 }
 
 .quantity-module {
-    width: 100px;
+    width: 125px;
     margin: 15px auto !important;
 }

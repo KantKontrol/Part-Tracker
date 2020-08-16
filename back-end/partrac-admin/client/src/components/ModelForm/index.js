@@ -3,6 +3,7 @@ import M from "materialize-css";
 import "./index.css";
 
 import PartInput from "../PartInput";
+import PartDispaly from "../PartDisplay";
 
 export default function ModelForm(props){
 
@@ -28,15 +29,18 @@ export default function ModelForm(props){
 
             <h5 style={{ textAlign: "center" }}>Add Parts</h5>
 
-
-            <div className="row">
-
-            </div>
-
             <div className="row">
                 <div className="col s12 m12 l12">
                     <PartInput part_name={state.part_name} part_quantity={state.part_quantity} updatePartQuantity={updatePartQuantity} stateChange={stateChange} addPart={addPart} />
                 </div>
+            </div>
+
+            <div className="row">
+                {
+                    state.parts.length > 0 ? state.parts.map((e,i) => {
+                        return <PartDispaly key={e.title+i} title={e.title} quantity={e.quantity} />
+                    }) : <div style={{fontSize: "1rem"}}>parts added will appear here</div>
+                }
             </div>
 
             <div className="row">

@@ -4,7 +4,7 @@ import "./index.css";
 
 export default function ModelForm(props){
 
-    let { addModel, processImage, state } = props;
+    let { addModel, stateChange, processImage, state } = props;
 
     useEffect(() => {
         let collapsible = document.querySelectorAll(".collapsible");

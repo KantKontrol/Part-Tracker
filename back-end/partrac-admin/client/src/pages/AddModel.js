@@ -82,7 +82,7 @@ class AddModel extends React.Component {
                         <div className="col s2 m2 l2"></div>
     
                         <div className="col s8 m8 l8">
-                            <ModelForm state={this.state} addModel={this.addModel} processImage={this.processImage}/>
+                            <ModelForm state={this.state} addModel={this.addModel} processImage={this.processImage} stateChange={this.handleStateChange}/>
                         </div>
     
                         <div className="col s2 m2 l2"></div>

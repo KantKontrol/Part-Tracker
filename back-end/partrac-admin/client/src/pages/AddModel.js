@@ -13,19 +13,25 @@ class AddModel extends React.Component {
 
         this.state = {
             model_name: "",
+            part_name: "",
+            part_quantity: 0,
             parts: [],
             multerImg: "",
             multerFormData: new FormData()
         }
     }
 
-    handleStateChange = ({target}) => {
+    handleStateChange = ({target}) => { //this handles state change for model name
         let { id, value } = target;
 
         this.setState({ ...this.state, [id]: value });
     }
 
-    processImage = (e) => {
+    addPartInput = () => {
+
+    }
+
+    processImage = (e) => { //this creates a formData object for our uploaded image
 
         let imageFormObj = new FormData();
         imageFormObj.append("imageName", 'cus-image' + Date.now());
@@ -35,27 +41,21 @@ class AddModel extends React.Component {
             multerImg: URL.createObjectURL(e.target.files[0]),
             multerFormData: imageFormObj
         });
-
-
-      //  console.log(this.state.multerFormData.get('imageName'))
     }
 
     addModel = () => {
         axios.post("/model", this.state).then(res => {
-            console.log(res.data._id);
-
-            console.log(res.data)
 
             let formData = this.state.multerFormData;
-            console.log(formData.has("model_id"));
-            if(!formData.has("model_id")){
+        
+            if(!formData.has("model_id")){ 
                 formData.append("model_id", res.data._id);
             }
         
             axios.post("/model/image", formData).then(res => {
                 console.log(res);
             });
-        })
+        });
     }
 
     render(){

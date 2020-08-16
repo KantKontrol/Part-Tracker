@@ -1,4 +1,5 @@
 const db = require("../models");
+const mongoose = require("mongoose");
 
 module.exports = {
     getInventory: function(cb){ //gets all models and their parts in inventory
@@ -24,6 +25,23 @@ module.exports = {
     getLogs: function(cb){ //this gets all logs
         db.Log.find({}, (err, data) => {
             cb(err, data);
+        });
+    },
+    addImageToModel: function(id, imageName, imagePath, cb){
+       
+        db.Model.findById(id , (err, model) => {
+
+            console.log("----")
+            console.log(model)
+
+            model.img = {
+                imageName: imageName,
+                imageData: imagePath
+            }
+
+            model.save(() => {
+                cb(err, true);
+            });
         });
     }
 }

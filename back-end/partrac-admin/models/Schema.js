@@ -29,7 +29,10 @@ const ModelSchema = Schema({
         type: String
     },
     parts: [PartSchema],
-    img: ImageSchema
+    img: {
+        type: ImageSchema,
+        required: false
+    } 
 });
 
 module.exports = ModelSchema, PartSchema, ImageSchema;

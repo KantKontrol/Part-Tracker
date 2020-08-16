@@ -18,7 +18,8 @@ class AddModel extends React.Component {
             screen_quantity: 0,
             battery_quantity: 0,
             mobo_quantity: 0,
-            multerImg: ""
+            multerImg: "",
+            multerFormData: new FormData()
         }
     }
 
@@ -40,17 +41,30 @@ class AddModel extends React.Component {
         imageFormObj.append("imageData", e.target.files[0]);
 
         this.setState({
-            multerImg: URL.createObjectURL(e.target.files[0])
+            multerImg: URL.createObjectURL(e.target.files[0]),
+            multerFormData: imageFormObj
         });
 
 
-
+      //  console.log(this.state.multerFormData.get('imageName'))
     }
 
     addModel = () => {
         axios.post("/model", this.state).then(res => {
-            console.log(res);
-        });
+            console.log(res.data._id);
+
+            console.log(res.data)
+
+            let formData = this.state.multerFormData;
+            console.log(formData.has("model_id"));
+            if(!formData.has("model_id")){
+                formData.append("model_id", res.data._id);
+            }
+        
+            axios.post("/model/image", formData).then(res => {
+                console.log(res);
+            });
+        })
     }
 
     render(){

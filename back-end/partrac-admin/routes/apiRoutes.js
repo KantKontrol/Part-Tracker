@@ -49,30 +49,33 @@ module.exports = (app) => {
         });
     });
 
-    app.post("/model", upload.single('imageData'), (req,res)=>{ //this route is intended to add models
-        console.log(req.body)
+    app.post("/model/image", upload.single('imageData'), (req, res) => {
 
+        const { model_id, imageName } = req.body;
+        const path = req.file.path;
+
+        console.log("updating: " + model_id)
+
+        inventoryController.addImageToModel(model_id, imageName, path, (success) => {
+            res.send(success);
+        });
+    });
+
+    app.post("/model", (req,res)=>{ //this route is intended to add models
+        
         let data = req.body;
 
         let newModel = {
             name: data.model_name,
-            parts: data.parts.map(e => {
-                return {
-                    title: e.title,
-                    quantity: e.quantity
-                }
-            }),
-            img: {
-                imageName: data.imageName,
-                imageData: data.imageData
-            }
+            parts: []
         }
 
-        inventoryController.addModel(newModel, (success) => {
-            if(success)
-                res.send("success!");
-            else
-                res.send("fail");
+        inventoryController.addModel(newModel, (err, result) => {
+            if(err)
+                res.send(err);
+            else{
+                res.send(result);
+            }    
         });
     });
 

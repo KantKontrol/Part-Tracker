@@ -6,14 +6,19 @@ export default function PartInput(props){
     let { part_name, part_quantity, stateChange } = props;
 
     return (
-        <div className="row" style={{ position: "relative"}}>
-            <div className="col s8">
-                <div className="input-field inline">
+        <div className="row">
+            <div className="col s12 m12 l4">
+                <div className="input-field">
                     <input id="part_name" type="text" className="validate" value={part_name} onChange={stateChange} />
                     <label htmlFor="part_name">Part Name</label>
                 </div>
             </div>
-            <QuantityModule quantity={part_quantity}/>
+            <div className="col s6 m6 l4">
+                <QuantityModule quantity={part_quantity}/>
+            </div>
+            <div className="col s6 m4 l4" style={{ marginTop: "15px"}}>
+                <button className="btn">Add a Part</button>
+            </div>
         </div>
     );
 }

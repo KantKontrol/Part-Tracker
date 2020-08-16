@@ -1,3 +1,9 @@
 .quantity-text {
     font-size: 1.4rem;
+    text-align: center;
+}
+
+.quantity-module {
+    width: 100px;
+    margin: 15px auto !important;
 }

@@ -8,12 +8,10 @@ export default function QuantityModule(props){
     let { quantity } = props;
 
     return (
-        <div className="col s4 m4 l4" style={{ marginTop: "15px"}}>
-            <i className="material-icons prefix" style={{ float: "left", marginTop: "0px"}}><ArrowDropUpIcon style={{ fontSize: "32px",  cursor: "pointer"}}/></i>
-        
-            <div className="quantity-text"  style={{ float: "left"}}>{quantity}</div>
-        
-            <i className="material-icons prefix"  style={{ float: "left", marginTop: "0px"}}><ArrowDropDownIcon style={{ fontSize: "32px", cursor: "pointer"}}/></i>
+        <div className="row quantity-module">
+            <i className="material-icons prefix" style={{ float: "left", marginTop: "0px"}}><ArrowDropUpIcon style={{ fontSize: "40px",  cursor: "pointer", textAlign: "center", color: "#26a69a"}}/></i>
+            <div className="quantity-text "  style={{ float: "left"}}>{quantity}</div>
+            <i className="material-icons prefix"  style={{ float: "left", marginTop: "0px"}}><ArrowDropDownIcon style={{ fontSize: "40px", cursor: "pointer", textAlign: "center", color: "#26a69a"}}/></i>
         </div>
     );
 }

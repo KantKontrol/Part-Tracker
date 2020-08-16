@@ -34,11 +34,8 @@ export default function ModelForm(props){
             </div>
 
             <div className="row">
-                <div className="col s12 m6 l6">
+                <div className="col s12 m12 l12">
                     <PartInput part_name={state.part_name} part_quantity={state.part_quantity} stateChange={stateChange} />
-                </div>
-                <div className="col s12 m4 l4">
-                    <button className="btn">Add a Part</button>
                 </div>
             </div>
 

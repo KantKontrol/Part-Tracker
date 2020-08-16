@@ -48,10 +48,9 @@ class AddModel extends React.Component {
 
         let updatedParts = this.state.parts;
 
-        updatedParts.push(part);
+        updatedParts.unshift(part);
 
         this.setState({ parts: updatedParts });
-        console.log(this.state)
     }
 
     processImage = (e) => { //this creates a formData object for our uploaded image

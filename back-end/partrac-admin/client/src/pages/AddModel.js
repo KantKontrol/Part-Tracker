@@ -14,10 +14,6 @@ class AddModel extends React.Component {
         this.state = {
             model_name: "",
             parts: [],
-            keyboard_quantity: 0,
-            screen_quantity: 0,
-            battery_quantity: 0,
-            mobo_quantity: 0,
             multerImg: "",
             multerFormData: new FormData()
         }
@@ -86,7 +82,7 @@ class AddModel extends React.Component {
                         <div className="col s2 m2 l2"></div>
     
                         <div className="col s8 m8 l8">
-                            <ModelForm state={this.state} addModel={this.addModel} processImage={this.processImage} stateChange={this.handleStateChange}/>
+                            <ModelForm state={this.state} addModel={this.addModel} processImage={this.processImage}/>
                         </div>
     
                         <div className="col s2 m2 l2"></div>

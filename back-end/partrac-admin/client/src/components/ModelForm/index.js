@@ -4,7 +4,7 @@ import "./index.css";
 
 export default function ModelForm(props){
 
-    let { addModel, stateChange, processImage, state } = props;
+    let { addModel, processImage, state } = props;
 
     useEffect(() => {
         let collapsible = document.querySelectorAll(".collapsible");
@@ -24,24 +24,16 @@ export default function ModelForm(props){
                 </div>
             </div>
 
-            <h5 style={{ textAlign: "center" }}>Enter Part Quantity</h5>
+            <h5 style={{ textAlign: "center" }}>Add Parts</h5>
+
 
             <div className="row">
-                <div className="input-field col s6 m4 l4">
-                        <input id="keyboard_quantity" type="number" min="0" className="validate" value={state.keyboard_quantity} onChange={stateChange} />
-                        <label htmlFor="keyboard_quantity"  className="active">Keyboard Quantity</label>
-                </div>
-                <div className="input-field col s6 m4 l4">
-                        <input id="screen_quantity" type="number" min="0" className="validate" value={state.screen_quantity} onChange={stateChange}/>
-                        <label htmlFor="screen_quantity"  className="active">Screen Quantity</label>
-                </div>
-                <div className="input-field col s6 m4 l4">
-                        <input id="battery_quantity" type="number" min="0" className="validate" value={state.battery_quantity} onChange={stateChange}/>
-                        <label htmlFor="battery_quantity"  className="active">Battery Quantity</label>
-                </div>
-                <div className="input-field col s6 m4 l4">
-                        <input id="mobo_quantity" type="number" min="0" className="validate" value={state.mobo_quantity} onChange={stateChange}/>
-                        <label htmlFor="mobo_quantity"  className="active">Mobo Quantity</label>
+
+            </div>
+
+            <div className="row">
+                <div className="col s4">
+                    <button className="btn">Add a Part</button>
                 </div>
             </div>
 

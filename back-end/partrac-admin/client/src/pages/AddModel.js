@@ -39,6 +39,21 @@ class AddModel extends React.Component {
         this.setState({ part_quantity: q });
     }
 
+    addPart = () => {
+
+        let part = {
+            title: this.state.part_name,
+            quantity: this.state.part_quantity
+        }
+
+        let updatedParts = this.state.parts;
+
+        updatedParts.push(part);
+
+        this.setState({ parts: updatedParts });
+        console.log(this.state)
+    }
+
     processImage = (e) => { //this creates a formData object for our uploaded image
 
         let imageFormObj = new FormData();
@@ -85,7 +100,14 @@ class AddModel extends React.Component {
                         <div className="col s2 m2 l2"></div>
     
                         <div className="col s12 m8 l8">
-                            <ModelForm state={this.state} addModel={this.addModel} processImage={this.processImage} stateChange={this.handleStateChange} updatePartQuantity={this.updatePartQuantity}/>
+                            <ModelForm 
+                                state={this.state} 
+                                addModel={this.addModel} 
+                                processImage={this.processImage} 
+                                stateChange={this.handleStateChange} 
+                                updatePartQuantity={this.updatePartQuantity}
+                                addPart={this.addPart}
+                            />
                         </div>
     
                         <div className="col s2 m2 l2"></div>

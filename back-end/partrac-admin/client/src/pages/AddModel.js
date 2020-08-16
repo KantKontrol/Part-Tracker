@@ -27,8 +27,16 @@ class AddModel extends React.Component {
         this.setState({ ...this.state, [id]: value });
     }
 
-    addPartInput = () => {
+    updatePartQuantity = (direction) => {
 
+        let q = this.state.part_quantity;
+
+        if(direction === 1)
+            q++;
+        else if(direction === 0 && (q-1) >= 0)
+            q--;
+
+        this.setState({ part_quantity: q });
     }
 
     processImage = (e) => { //this creates a formData object for our uploaded image
@@ -77,7 +85,7 @@ class AddModel extends React.Component {
                         <div className="col s2 m2 l2"></div>
     
                         <div className="col s12 m8 l8">
-                            <ModelForm state={this.state} addModel={this.addModel} processImage={this.processImage} stateChange={this.handleStateChange}/>
+                            <ModelForm state={this.state} addModel={this.addModel} processImage={this.processImage} stateChange={this.handleStateChange} updatePartQuantity={this.updatePartQuantity}/>
                         </div>
     
                         <div className="col s2 m2 l2"></div>

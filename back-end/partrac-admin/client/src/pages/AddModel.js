@@ -53,6 +53,14 @@ class AddModel extends React.Component {
         this.setState({ parts: updatedParts });
     }
 
+    removePart = (id) => {
+        let currentParts = this.state.parts;
+
+        currentParts.splice(id, 1);
+
+        this.setState({ parts: currentParts });
+    }
+
     processImage = (e) => { //this creates a formData object for our uploaded image
 
         let imageFormObj = new FormData();
@@ -106,6 +114,7 @@ class AddModel extends React.Component {
                                 stateChange={this.handleStateChange} 
                                 updatePartQuantity={this.updatePartQuantity}
                                 addPart={this.addPart}
+                                removePart={this.removePart}
                             />
                         </div>
     

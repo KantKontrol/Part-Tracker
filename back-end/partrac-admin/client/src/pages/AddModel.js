@@ -42,7 +42,7 @@ class AddModel extends React.Component {
     addPart = () => {
 
         let part = {
-            title: this.state.part_name,
+            title: this.state.part_name.trim(),
             quantity: this.state.part_quantity
         }
 
@@ -50,7 +50,7 @@ class AddModel extends React.Component {
 
         updatedParts.unshift(part);
 
-        this.setState({ parts: updatedParts });
+        this.setState({ parts: updatedParts, part_name: "", part_quantity: 0 });
     }
 
     removePart = (id) => {

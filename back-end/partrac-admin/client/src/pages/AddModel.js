@@ -22,12 +22,7 @@ class AddModel extends React.Component {
     handleStateChange = ({target}) => {
         let { id, value } = target;
 
-        if(id !== "model_name"){ //this works for now but kinda looks nasty
-            if(value >= 0)
-                this.setState({ ...this.state, [id]: parseInt(value) });
-        }
-        else
-            this.setState({ ...this.state, [id]: value });
+        this.setState({ ...this.state, [id]: value });
     }
 
     processImage = (e) => {

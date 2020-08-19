@@ -1,6 +1,7 @@
 .part-display {
     display: block;
-    background-color: rgba(185, 178, 178, 0.658) !important;
+    background-color: rgba(242,242,242,0.5) !important;
+    box-shadow: 3px 3px 5px #26a69980 !important;
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 5px !important;

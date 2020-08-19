@@ -7,6 +7,7 @@ import AdminLanding from "./pages/AdminLanding";
 import ViewInventory from "./pages/ViewInventory";
 import ActivityLog from './pages/ActivityLog';
 import AddModel from "./pages/AddModel";
+import EditModel from './pages/EditModel';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Route exact path="/viewinventory" component={ViewInventory}></Route>
       <Route exact path="/log" component={ActivityLog}></Route>
       <Route exact path="/addmodel" component={AddModel}></Route>
+      <Route exact path="/editmodel" component={EditModel}></Route>
     </Router>
   );
 }

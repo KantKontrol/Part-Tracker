@@ -51,14 +51,20 @@ module.exports = (app) => {
 
     app.post("/model/image", upload.single('imageData'), (req, res) => {
 
-        const { model_id, imageName } = req.body;
-        const path = req.file.path;
-
-        console.log("updating: " + model_id)
-
-        inventoryController.addImageToModel(model_id, imageName, path, (success) => {
-            res.send(success);
-        });
+        try {
+            const { model_id, imageName } = req.body;
+            const path = req.file.path;
+    
+            console.log("updating: " + model_id)
+    
+            inventoryController.addImageToModel(model_id, imageName, path, (success) => {
+                res.send(success);
+            });
+        }
+        catch(err){
+            console.log("something went wrong with image upload :( Client Notified.")
+            res.status(500).send(err);
+        }
     });
 
     app.post("/model", (req,res)=>{ //this route is intended to add models

@@ -110,18 +110,38 @@ class AddModel extends React.Component {
     }
 
     addModel = () => {
-        axios.post("/model", this.state).then(res => {
 
-            let formData = this.state.multerFormData;
-        
-            if(!formData.has("model_id")){ 
-                formData.append("model_id", res.data._id);
+        let modelName = this.state.model_name;
+
+        if(modelName.trim().length === 0){
+            M.toast({html: "Model name must contain at least 1 character", classes: "toast-style-bad"});
+        }
+        else {
+            let newModel = {
+                model_name: this.state.model_name,
+                parts: this.state.parts
             }
-        
-            axios.post("/model/image", formData).then(res => {
-                console.log(res);
+    
+            axios.post("/model", newModel).then(res => {
+    
+                M.toast({html: "Uploaded Model", classes: "toast-style-good"});
+    
+                let formData = this.state.multerFormData;
+            
+                if(!formData.has("model_id")){ 
+                    formData.append("model_id", res.data._id);
+                }
+    
+                M.toast({html: "Uploading Image...", classes: "toast-style-good"});
+            
+                axios.post("/model/image", formData).then(res => {
+                    M.toast({html: "Uploaded Image", classes: "toast-style-good"});
+                }).catch(err => {
+                    M.toast({html: "Error uploading image, contact an admin", classes: "toast-style-bad"});
+                    console.log(`Contact an admin if problem persists: ${err}`);
+                });
             });
-        });
+        }
     }
 
     render(){

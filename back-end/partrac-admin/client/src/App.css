@@ -16,6 +16,16 @@
   text-align: center;
 }
 
+.toast-style-good {
+  background-color: #26a69a !important;
+  border-bottom: 4px solid #1cc5b4 !important;
+}
+
+.toast-style-bad {
+  background-color: #26a69a !important;
+  border-bottom: 4px solid #c91414 !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

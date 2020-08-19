@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ModelForm from "../components/ModelForm";
 import axios from "axios";
+import M from "materialize-css";
 
 
 class AddModel extends React.Component {
@@ -50,6 +51,8 @@ class AddModel extends React.Component {
     }
 
     addPart = () => {
+
+        M.toast({html: "hello", classes: "toast-style-good"})
 
         let title = this.state.part_name.trim();
         let quantity = this.state.part_quantity;

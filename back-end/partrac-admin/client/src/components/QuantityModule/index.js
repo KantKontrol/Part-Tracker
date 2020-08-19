@@ -9,9 +9,9 @@ export default function QuantityModule(props){
 
     return (
         <div className="row quantity-module">
-            <i className="material-icons prefix" onClick={() => updatePartQuantity(1)} style={{ float: "left", marginTop: "0px"}}><ArrowDropUpIcon style={{ fontSize: "40px",  cursor: "pointer", textAlign: "center", color: "#26a69a"}}/></i>
-            <input type="number" max="3" style={{ float: "left", width: "30%", textAlign: "center"}} value={quantity} onChange={handleNumInput}/>
-            <i className="material-icons prefix" onClick={() => updatePartQuantity(0)}  style={{ float: "left", marginTop: "0px"}}><ArrowDropDownIcon style={{ fontSize: "40px", cursor: "pointer", textAlign: "center", color: "#26a69a"}}/></i>
+            <i className="material-icons prefix showSelect" onClick={() => updatePartQuantity(1)} style={{ float: "left", marginTop: "0px"}}><ArrowDropUpIcon style={{ fontSize: "40px",  cursor: "pointer", textAlign: "center", color: "#26a69a"}}/></i>
+            <input type="number" max="4" style={{ float: "left", width: "40%", textAlign: "center"}} value={quantity} onChange={handleNumInput}/>
+            <i className="material-icons prefix showSelect" onClick={() => updatePartQuantity(0)}  style={{ float: "left", marginTop: "0px"}}><ArrowDropDownIcon style={{ fontSize: "40px", cursor: "pointer", textAlign: "center", color: "#26a69a"}}/></i>
         </div>
     );
 }

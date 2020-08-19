@@ -51,10 +51,17 @@ class AddModel extends React.Component {
     }
 
     addPart = () => {
+        let title = this.state.part_name.trim();
+        let quantity = this.state.part_quantity;
+
+        if(quantity.length == 0){
+            quantity = "0";
+            quantity = parseInt(quantity);
+        }
 
         let part = {
-            title: this.state.part_name.trim(),
-            quantity: this.state.part_quantity
+            title: title,
+            quantity: quantity
         }
 
         let updatedParts = this.state.parts;

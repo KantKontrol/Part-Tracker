@@ -18,7 +18,7 @@ export default function ViewInventory(){
         getInventory();
         getModels();
         setModel();
-    }, []);
+    });
 
     const loadSelect = () => {
         let elems = document.querySelectorAll('select');
@@ -96,6 +96,8 @@ export default function ViewInventory(){
                                             return e.parts.map(p => {
                                                 return <TableRow key={e._id + p.title} model={e.name} part={p.title} quantity={p.quantity}/>
                                             });
+                                        else
+                                            return <TableRow model="Error Rendering Data"></TableRow> 
 
                                     }) : <TableRow model="Loading..."></TableRow>  
                                 }

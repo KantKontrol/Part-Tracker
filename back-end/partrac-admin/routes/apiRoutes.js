@@ -68,7 +68,7 @@ module.exports = (app) => {
     });
 
     app.post("/model", (req,res)=>{ //this route is intended to add models
-        
+
         let data = req.body;
 
         let newModel = {

@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import API from "../utils/API";
 import axios from "axios";
 import M from "materialize-css";
+import ModelSelectDisplay from "../components/ModelSelectDisplay";
 
 
 class EditModel extends React.Component {
@@ -49,13 +50,11 @@ class EditModel extends React.Component {
                     </div>
     
                     <div className="row">
-                        <div className="col s2 m2 l2"></div>
-    
-                        <div className="col s12 m8 l8">
-
-                        </div>
-    
-                        <div className="col s2 m2 l2"></div>
+                        
+                        { this.state.models.length > 0 ? this.state.models.map(e => {
+                                return <ModelSelectDisplay title={e}/>
+                        }) : <div></div> }
+                       
                     </div>
     
                 </main>

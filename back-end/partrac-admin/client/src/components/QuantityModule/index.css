@@ -20,7 +20,12 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.showSelect:active {
+.showSelect:hover {
     background-color: #26a69975;   
+    border-radius: 5px;
+}
+
+.showSelect:active {
+    background-color: #26a699bd;   
     border-radius: 5px;
 }

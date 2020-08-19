@@ -28,7 +28,6 @@ class AddModel extends React.Component {
     }
 
     handleNumInput =({target}) => {
-        console.log(target)
         let { value, max } = target;
      
         if(value.length > max){
@@ -51,6 +50,7 @@ class AddModel extends React.Component {
     }
 
     addPart = () => {
+
         let title = this.state.part_name.trim();
         let quantity = this.state.part_quantity;
 

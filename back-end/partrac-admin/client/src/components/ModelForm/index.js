@@ -7,7 +7,7 @@ import PartDispaly from "../PartDisplay";
 
 export default function ModelForm(props){
 
-    let { addModel, stateChange, processImage, updatePartQuantity, addPart, removePart, state } = props;
+    let { addModel, stateChange, processImage, updatePartQuantity, handleNumInput, addPart, removePart, state } = props;
 
     useEffect(() => {
         let collapsible = document.querySelectorAll(".collapsible");
@@ -31,7 +31,7 @@ export default function ModelForm(props){
 
             <div className="row">
                 <div className="col s12 m12 l12">
-                    <PartInput part_name={state.part_name} part_quantity={state.part_quantity} updatePartQuantity={updatePartQuantity} stateChange={stateChange} addPart={addPart} />
+                    <PartInput part_name={state.part_name} part_quantity={state.part_quantity} updatePartQuantity={updatePartQuantity} handleNumInput={handleNumInput} stateChange={stateChange} addPart={addPart} />
                 </div>
             </div>
 

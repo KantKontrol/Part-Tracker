@@ -9,7 +9,7 @@ import axios from "axios";
 class AddModel extends React.Component {
 
     constructor(){
-        super()
+        super();
 
         this.state = {
             model_name: "",
@@ -25,6 +25,17 @@ class AddModel extends React.Component {
         let { id, value } = target;
 
         this.setState({ ...this.state, [id]: value });
+    }
+
+    handleNumInput =({target}) => {
+        console.log(target)
+        let { value, max } = target;
+     
+        if(value.length > max){
+            value = value.slice(0,max);
+        }
+
+        this.setState({ ...this.state, part_quantity: value})
     }
 
     updatePartQuantity = (direction) => {
@@ -112,6 +123,7 @@ class AddModel extends React.Component {
                                 addModel={this.addModel} 
                                 processImage={this.processImage} 
                                 stateChange={this.handleStateChange} 
+                                handleNumInput={this.handleNumInput}
                                 updatePartQuantity={this.updatePartQuantity}
                                 addPart={this.addPart}
                                 removePart={this.removePart}

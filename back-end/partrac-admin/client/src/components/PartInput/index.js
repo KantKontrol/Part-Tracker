@@ -3,7 +3,7 @@ import QuantityModule from "../QuantityModule";
 
 export default function PartInput(props){
 
-    let { part_name, part_quantity, updatePartQuantity, addPart, stateChange } = props;
+    let { part_name, part_quantity, updatePartQuantity, handleNumInput, addPart, stateChange } = props;
 
     return (
         <div className="row">
@@ -14,7 +14,7 @@ export default function PartInput(props){
                 </div>
             </div>
             <div className="col s6 m6 l4">
-                <QuantityModule quantity={part_quantity} updatePartQuantity={updatePartQuantity}/>
+                <QuantityModule quantity={part_quantity} updatePartQuantity={updatePartQuantity} handleNumInput={handleNumInput}/>
             </div>
             <div className="col s6 m4 l4" style={{ marginTop: "15px"}}>
                 <button className="btn" onClick={() => addPart()}>Add a Part</button>

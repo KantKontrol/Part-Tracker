@@ -13,11 +13,11 @@ export default function PartInput(props){
                     <label htmlFor="part_name">Part Name</label>
                 </div>
             </div>
-            <div className="col s6 m6 l4">
+            <div className="col s12 m6 l4">
                 <QuantityModule quantity={part_quantity} updatePartQuantity={updatePartQuantity} handleNumInput={handleNumInput}/>
             </div>
-            <div className="col s6 m4 l4" style={{ marginTop: "15px"}}>
-                <button className="btn" onClick={() => addPart()}>Add a Part</button>
+            <div className="col s12 m6 l4" style={{ marginTop: "15px"}}>
+                <button className="btn" style={{ margin: 0 + ' auto', display: "block"}} onClick={() => addPart()}>Add a Part</button>
             </div>
         </div>
     );

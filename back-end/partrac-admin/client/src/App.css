@@ -16,6 +16,13 @@
   text-align: center;
 }
 
+#toast-container {
+  top: 20% !important;
+  right: 7% !important;
+  bottom: auto !important;
+  left: auto !important;
+}
+
 .toast-style-good {
   background-color: #26a69a !important;
   border-bottom: 4px solid #1cc5b4 !important;
@@ -32,5 +39,11 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .toast {
+    width: 70% !important;
   }
 }

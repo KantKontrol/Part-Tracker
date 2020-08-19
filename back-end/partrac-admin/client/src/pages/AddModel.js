@@ -52,26 +52,31 @@ class AddModel extends React.Component {
 
     addPart = () => {
 
-        M.toast({html: "hello", classes: "toast-style-good"})
-
         let title = this.state.part_name.trim();
         let quantity = this.state.part_quantity;
 
-        if(quantity.length == 0){
-            quantity = "0";
-            quantity = parseInt(quantity);
+        if(title.length > 0){
+            if(quantity.length === 0){
+                quantity = "0";
+                quantity = parseInt(quantity);
+            }
+            
+            let part = {
+                title: title,
+                quantity: quantity
+            }
+    
+            let updatedParts = this.state.parts;
+    
+            updatedParts.unshift(part);
+    
+            this.setState({ parts: updatedParts, part_name: "", part_quantity: 0 });
+
+            M.toast({html: "Part added successfully!", classes: "toast-style-good"});
         }
-
-        let part = {
-            title: title,
-            quantity: quantity
+        else {
+            M.toast({html: "Part name must contain be at least 1 character", classes: "toast-style-bad"});
         }
-
-        let updatedParts = this.state.parts;
-
-        updatedParts.unshift(part);
-
-        this.setState({ parts: updatedParts, part_name: "", part_quantity: 0 });
     }
 
     removePart = (id) => {
@@ -85,13 +90,23 @@ class AddModel extends React.Component {
     processImage = (e) => { //this creates a formData object for our uploaded image
 
         let imageFormObj = new FormData();
-        imageFormObj.append("imageName", 'cus-image' + Date.now());
-        imageFormObj.append("imageData", e.target.files[0]);
 
-        this.setState({
-            multerImg: URL.createObjectURL(e.target.files[0]),
-            multerFormData: imageFormObj
-        });
+        if(e.target.files[0]){
+            
+            imageFormObj.append("imageName", 'cus-image' + Date.now());
+            imageFormObj.append("imageData", e.target.files[0]);
+    
+            this.setState({
+                multerImg: URL.createObjectURL(e.target.files[0]),
+                multerFormData: imageFormObj
+            });
+        }
+        else {
+            this.setState({
+                multerImg: "none",
+                multerFormData: imageFormObj
+            });
+        }
     }
 
     addModel = () => {

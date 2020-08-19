@@ -24,6 +24,7 @@ class EditModel extends React.Component {
 
     getModels = () => {
         API.getModels().then(res => {
+            console.log(res.data)
             this.setState({ models: res.data });
         });
     }
@@ -51,8 +52,8 @@ class EditModel extends React.Component {
     
                     <div className="row">
                         
-                        { this.state.models.length > 0 ? this.state.models.map(e => {
-                                return <ModelSelectDisplay title={e}/>
+                        { this.state.models.length > 0 ? this.state.models.map((e,i) => {
+                                return <ModelSelectDisplay key={i} title={e.name} image={e.imageData}/>
                         }) : <div></div> }
                        
                     </div>

@@ -43,8 +43,15 @@ module.exports = (app) => {
             if(err){
                 res.send(err)
             }
-
-            let models = data.map(e => e.name)
+            
+            let models = data.map(e => {
+                if(e.img)
+                    return { 
+                        name: e.name, 
+                        imageData: e.img.imageData
+                    }
+                else return e;
+            });
             res.send(models);
         });
     });
@@ -54,6 +61,7 @@ module.exports = (app) => {
         try {
             const { model_id, imageName } = req.body;
             const path = req.file.path;
+            console.log(req.file.path)
     
             console.log("updating: " + model_id)
     

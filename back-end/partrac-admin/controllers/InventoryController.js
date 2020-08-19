@@ -31,9 +31,6 @@ module.exports = {
        
         db.Model.findById(id , (err, model) => {
 
-            console.log("----")
-            console.log(model)
-
             model.img = {
                 imageName: imageName,
                 imageData: imagePath

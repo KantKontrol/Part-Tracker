@@ -5,6 +5,11 @@
     position: relative;
 }
 
+.image-inside{
+    width: 250px;
+    height: 250px;
+}
+
 .picture-cover:hover .overlay{
     opacity: 1;
 }

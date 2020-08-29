@@ -59,6 +59,7 @@ module.exports = (app) => {
     app.post("/model/image", upload.single('imageData'), (req, res) => {
 
         try {
+            console.log(req.body)
             const { model_id, imageName } = req.body;
             const path = req.file.path;
             console.log(req.file.path)
@@ -71,6 +72,7 @@ module.exports = (app) => {
         }
         catch(err){
             console.log("something went wrong with image upload :( Client Notified.")
+            console.log(err);
             res.status(500).send(err);
         }
     });

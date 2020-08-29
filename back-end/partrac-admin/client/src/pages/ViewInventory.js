@@ -5,6 +5,7 @@ import TableRow from "../components/TableRow";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
 import API from "../utils/API";
+import axios from "axios"
 
 
 export default function ViewInventory(){
@@ -14,11 +15,19 @@ export default function ViewInventory(){
     const [filterModel, setFilterModel] = useState("All");
 
     useEffect(() => {
+        const CancelToken = axios.CancelToken;
+        const source = CancelToken.source();
+
         loadSelect();
         getInventory();
-        getModels();
+        getModels(source);
         setModel();
-    });
+        
+
+        return () => {
+            return source.cancel();
+        }
+    }, []);
 
     const loadSelect = () => {
         let elems = document.querySelectorAll('select');
@@ -31,8 +40,8 @@ export default function ViewInventory(){
         });
     }
 
-    const getModels = () => {
-        API.getModels().then(res => {
+    const getModels = (source) => {
+        API.getModels(source).then(res => {
             setModels(res.data);
             loadSelect();
         });
@@ -64,8 +73,8 @@ export default function ViewInventory(){
                         <select id="modelSelect">
                             <option value="" disabled>Select model(s)</option>
                             <option value="All">All</option>
-                            { models ? models.map((e, i) => {
-                                return <option key={i} value={e}>{e}</option>
+                            {models ? models.map((e, i) => {
+                                return <option key={i} value={e.name}>{e.name}</option>
                             }): <option>NONE</option>}
                         
                         </select>
@@ -87,17 +96,17 @@ export default function ViewInventory(){
                             <tbody>
                                 { 
                                     inventory.length > 0 ? inventory.map(e => {
-
-                                        if(filterModel === "All")
+                                    
+                                        if(filterModel === "All"){
                                             return e.parts.map(p => {
                                                 return <TableRow key={e._id + p.title} model={e.name} part={p.title} quantity={p.quantity}/>
                                             });
-                                        if(e.name === filterModel)
+                                        }
+                                        else if(e.name === filterModel){
                                             return e.parts.map(p => {
                                                 return <TableRow key={e._id + p.title} model={e.name} part={p.title} quantity={p.quantity}/>
                                             });
-                                        else
-                                            return <TableRow model="Error Rendering Data"></TableRow> 
+                                        }
 
                                     }) : <TableRow model="Loading..."></TableRow>  
                                 }

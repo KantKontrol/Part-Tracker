@@ -14,7 +14,8 @@ class EditModel extends React.Component {
         super();
 
         this.state = {
-            models: []
+            models: [],
+            currentEdit: {}
         }
     }
 

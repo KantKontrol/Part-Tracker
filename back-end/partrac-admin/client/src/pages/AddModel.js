@@ -18,8 +18,15 @@ class AddModel extends React.Component {
             part_quantity: 0,
             parts: [],
             multerImg: "",
-            multerFormData: new FormData()
+            multerFormData: this.DefaultImg()
         }
+    }
+
+    DefaultImg = () => {
+       let def = new FormData();
+       def.append("imageName", 'cus-image' + Date.now());
+       def.append("imageData", "/assets/images/chrome.jpg");
+       return def;
     }
 
     handleStateChange = ({target}) => { //this handles state change for model name
@@ -48,6 +55,17 @@ class AddModel extends React.Component {
             q--;
 
         this.setState({ part_quantity: q });
+    }
+
+    resetForm = () => {
+        this.setState({
+            model_name: "",
+            part_name: "",
+            part_quantity: 0,
+            parts: [],
+            multerImg: "",
+            multerFormData: this.DefaultImg()
+        });
     }
 
     addPart = () => {
@@ -104,7 +122,7 @@ class AddModel extends React.Component {
         else {
             this.setState({
                 multerImg: "none",
-                multerFormData: imageFormObj
+                multerFormData: this.DefaultImg()
             });
         }
     }
@@ -127,6 +145,8 @@ class AddModel extends React.Component {
                 M.toast({html: "Uploaded Model", classes: "toast-style-good"});
     
                 let formData = this.state.multerFormData;
+
+                console.log(formData)
             
                 if(!formData.has("model_id")){ 
                     formData.append("model_id", res.data._id);
@@ -136,6 +156,7 @@ class AddModel extends React.Component {
             
                 axios.post("/model/image", formData).then(res => {
                     M.toast({html: "Uploaded Image", classes: "toast-style-good"});
+                    this.resetForm();
                 }).catch(err => {
                     M.toast({html: "Error uploading image, contact an admin", classes: "toast-style-bad"});
                     console.log(`Contact an admin if problem persists: ${err}`);
@@ -143,6 +164,8 @@ class AddModel extends React.Component {
             });
         }
     }
+
+
 
     render(){
         return (
@@ -158,7 +181,7 @@ class AddModel extends React.Component {
                             <Link to="/home" className="btn">Back</Link>
                         </div>
                     </div>
-    
+        
                     <div className="row">
                         <div className="col s2 m2 l2"></div>
     

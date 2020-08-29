@@ -10,8 +10,13 @@ import ModelSelectDisplay from "../components/ModelSelectDisplay";
 
 class EditModel extends React.Component {
 
+    CancelToken = axios.CancelToken;
+    source = this.CancelToken.source();
+
     constructor(){
         super();
+
+
 
         this.state = {
             models: [],
@@ -23,11 +28,19 @@ class EditModel extends React.Component {
         this.getModels();
     }
 
+    componentWillUnmount = () => {
+        this.source.cancel();
+    }
+
     getModels = () => {
-        API.getModels().then(res => {
+        API.getModels(this.source).then(res => {
             console.log(res.data)
             this.setState({ models: res.data });
         });
+    }
+
+    setCurrentEditModel = () => {
+
     }
 
     handleStateChange = ({target}) => { //this handles state change for model name

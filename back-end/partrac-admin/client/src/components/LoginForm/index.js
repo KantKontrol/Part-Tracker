@@ -29,6 +29,9 @@ export default function LoginForm(props){
                         <label htmlFor="password">Password</label>
                     </div>
                 </div>
+                <div className="row">
+                    <button className="btn" style={{ float: 'right', marginRight: "30px"}}>Login</button>
+                </div>
             </form>
       </div>
     );

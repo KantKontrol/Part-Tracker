@@ -17,6 +17,10 @@ import LoginForm from "../components/LoginForm";
         this.setState({ ...this.state, [id]: value });
     }
 
+    handleSubmit = () => {
+
+    }
+
     render() {
         return (
             <div className="container">
@@ -33,13 +37,13 @@ import LoginForm from "../components/LoginForm";
                     </div>
 
                     <div className="row">
-                        <div className="col m3 l4"></div>
+                        <div className="col m2 l3"></div>
 
-                        <div className="col s12 m6 l4">
-                            <LoginForm username={this.state.username} password={this.state.password}  updateInput={this.updateInput} />
+                        <div className="col s12 m8 l6">
+                            <LoginForm username={this.state.username} password={this.state.password}  updateInput={this.updateInput} handleSubmit={this.handleSubmit} />
                         </div>
 
-                        <div className="col m3 l4"></div>
+                        <div className="col m2 l3"></div>
                     </div>
                 </div>
 

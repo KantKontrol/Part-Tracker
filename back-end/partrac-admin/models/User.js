@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+//const bcrypt = require("bcryptjs");
 
 const UserSchema = mongoose.Schema({
     user: {
@@ -10,6 +11,10 @@ const UserSchema = mongoose.Schema({
         require: true
     }
 });
+
+UserSchema.statics.verifyPassword = function(pass, callback) {
+    return this.model.find({ password: pass }, callback);
+}
 
 const User = mongoose.model("User", UserSchema);
 

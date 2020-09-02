@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import 'materialize-css/dist/css/materialize.min.css';
 import { BrowserRouter as Router, Route, Redirect} from "react-router-dom";
@@ -11,12 +11,17 @@ import EditModel from './pages/EditModel';
 
 
 function App() {
+
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <Router>
       <Route exact path="/">
         <Redirect to="/home"></Redirect>
       </Route>
-      <Route exact path="/login" component={Login}></Route>
+      <Route exact path="/login" >
+          <Login setLoggedIn={setLoggedIn} />
+      </Route>
       <Route exact path="/home" component={AdminLanding}></Route>
       <Route exact path="/viewinventory" component={ViewInventory}></Route>
       <Route exact path="/log" component={ActivityLog}></Route>

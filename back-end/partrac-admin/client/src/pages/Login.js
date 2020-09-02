@@ -1,10 +1,11 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
+import axios from "axios";
 
  class Login extends React.Component{
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state = {
             username: "",
@@ -17,8 +18,28 @@ import LoginForm from "../components/LoginForm";
         this.setState({ ...this.state, [id]: value });
     }
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault();
 
+        console.log("attempting to login user: ");
+        console.log(this.state.username);
+
+        axios.post("/auth/login", {
+            username: this.state.username,
+            password: this.state.password
+        }).then(result => {
+            
+            if(result.data){
+                console.log("logging in");
+                this.props.setLoggedIn(true);
+            }
+            else{
+                console.log("error logging in");
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
     }
 
     render() {

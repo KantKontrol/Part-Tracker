@@ -7,7 +7,7 @@ import "./index.css";
 
 export default function LoginForm(props){
 
-    let { username, password, updateInput} = props;
+    let { username, password, updateInput, handleSubmit} = props;
 
     useEffect(()=> {
         let collapsible = document.querySelectorAll(".collapsible");
@@ -16,7 +16,7 @@ export default function LoginForm(props){
 
     return (
         <div className="row">
-            <form className="col s12 login-style">
+            <div className="col s12 login-style">
                 <div className="row">
                     <div className="input-field col s12">
                         <i className="material-icons prefix"><AccountCircleIcon/></i>
@@ -30,9 +30,9 @@ export default function LoginForm(props){
                     </div>
                 </div>
                 <div className="row">
-                    <button className="btn" style={{ float: 'right', marginRight: "30px"}}>Login</button>
+                    <button className="btn" style={{ float: 'right', marginRight: "30px"}} onClick={handleSubmit} >Login</button>
                 </div>
-            </form>
+            </div>
       </div>
     );
 }
